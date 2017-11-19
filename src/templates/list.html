@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+<html lang="en">
+
+
+{% block head %}
+<style media="screen" type="text/css">
+
+
+div.input_prompt {
+  color: #303F9F;
+}
+
+div.output_prompt {
+  color: #D84315;
+}
+</style>
+
+    <!-- Loading mathjax macro -->
+    <!-- Load mathjax -->
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        <!-- MathJax configuration -->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            // Center justify equations in code and markdown cells. Elsewhere
+            // we use CSS to left justify single line equations in code cells.
+            displayAlign: 'center',
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}},
+                linebreaks: { automatic: true }
+            }
+        });
+        </script>
+        <!-- End of mathjax configuration --></head>
+{% endblock %}
+
+{% block body %}
+    <h1>{{list_name}}</h1>
+      <ol start=0>
+          {% for item in list %}
+              <li><a href=/{{root}}/{{ item.dir }}/>{{ item.title }}</a></li>
+          {% endfor %}
+      </ol>
+{% endblock %}
+
+</html>
