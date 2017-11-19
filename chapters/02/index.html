@@ -13,7 +13,41 @@ src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></sc
   <script>hljs.initHighlightingOnLoad();</script>
 
    
-   
+<style media="screen" type="text/css">
+
+
+div.input_prompt {
+  color: #303F9F;
+}
+
+div.output_prompt {
+  color: #D84315;
+}
+</style>
+
+    <!-- Loading mathjax macro -->
+    <!-- Load mathjax -->
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        <!-- MathJax configuration -->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            // Center justify equations in code and markdown cells. Elsewhere
+            // we use CSS to left justify single line equations in code cells.
+            displayAlign: 'center',
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}},
+                linebreaks: { automatic: true }
+            }
+        });
+        </script>
+        <!-- End of mathjax configuration --></head>
+
 
     <!-- Google Analytics -->
     <script>
@@ -55,36 +89,16 @@ src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></sc
     <div class="wrap">
       <div class="home">
         
-    <h1>Research software development</h1>
-<h2>WIP</h2>
-<h3>Description</h3>
-<p>A vital part of research is the use and development of software (computer code).
-Having a sound expertise in modern programming best practices will better
-prepare postgraduates for any potential future they choose to follow. This 2 day
-workshop will cover the basics of best practice based on expertise from the
-Sustainable Software Institute and Software Carpentry training. Upon completion
-students will:</p>
-<ul>
-<li>Be aware of best practices in terms of programming strategies (illustrated via
-  Python but applicable to any language).</li>
-<li>Be able to use git to version control code and github to work collaboratively
-  with others.</li>
-<li>Be able to write basic automated tests for code to ensure code is fit for
-  purpose.</li>
-</ul>
-<h3>Schedule</h3>
-<h4>Day 1</h4>
-<ul>
-<li>Morning: introduction to Python and programming best practice (command line,
-  modularization, self documentation, documentation)</li>
-<li>Afternoon: Version control (git and github)</li>
-</ul>
-<h4>Day 2</h4>
-<ul>
-<li>Morning: automated testing of software</li>
-<li>Afternoon: basic LaTeX and a collaborative group project (students will work
-  on a simple problem collaboratively bringing all the skills together)</li>
-</ul> 
+    <h1>LaTeX</h1>
+<p>We can use LaTeX</p>
+<pre><code class="tex">\documentclass{article}
+
+\usepackage{tikz}
+
+\begin{document}
+    Hello
+\end{document}
+</code></pre>
 
       </div>
   </div>
