@@ -34,7 +34,11 @@ def get_name(path):
     If the file is `01-introduction.md` this will return `Introduction`.
     """
     stem = path.stem
-    return stem[stem.index('-'):].replace('-', ' ').title()
+    try:
+        return stem[stem.index('-'):].replace('-', ' ').title()
+    except ValueError:
+        return stem.replace('-', ' ').title()
+
 
 def render_template(template_file, template_vars, output_path, ROOT=ROOT):
     """
@@ -99,5 +103,6 @@ if __name__ == "__main__":
     out = pathlib.Path(".")
 
     make_index(src=src, out=out)
-    make_participant_list(src=src, out=out / "participants")
+    #make_participant_list(src=src, out=out / "participants")
     make_chapters(src=src / "chs", out=out / "chapters")
+    make_chapters(src=src / "participants", out=out / "participants")
