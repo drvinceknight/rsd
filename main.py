@@ -67,16 +67,7 @@ def make_index(src, out):
                     template_vars={"content": content},
                     output_path=out / "index.html")
 
-def make_participant_list(src, out):
-    """
-    Write the participant list.
-    """
-    content = obtain_html(path=src / "participants.md")
-    render_template(template_file="content.html",
-                    template_vars={"content": content},
-                    output_path=out / "index.html")
-
-def make_chapters(src, out):
+def make_chapters(src, out, title="Chapters"):
     """
     Write all the chapters to `out`/chapters
     """
@@ -93,7 +84,7 @@ def make_chapters(src, out):
         chapters.append(Chapter(str(p), get_name(path)))
 
     render_template(template_file="list.html",
-                    template_vars={"list_name": "Chapters",
+                    template_vars={"list_name": title,
                                    "list": chapters},
                     output_path = out / "index.html")
 
@@ -105,4 +96,5 @@ if __name__ == "__main__":
     make_index(src=src, out=out)
     #make_participant_list(src=src, out=out / "participants")
     make_chapters(src=src / "chs", out=out / "chapters")
-    make_chapters(src=src / "participants", out=out / "participants")
+    make_chapters(src=src / "participants", out=out / "participants",
+                  title="Participants")
