@@ -51,11 +51,12 @@ def render_template(template_file, template_vars, output_path, ROOT=ROOT):
         template_vars["root"] = ROOT
     output_path.write_text(template.render(template_vars))
 
-def obtain_html(path):
+def obtain_html(path, ROOT=ROOT):
     """
     Convert a markdown file to html
     """
     md = path.read_text()
+    md = md.replace("{{root}}", "/" + ROOT)
     return markdown.markdown(md, extensions=['markdown.extensions.fenced_code'])
 
 def make_index(src, out):
@@ -94,7 +95,6 @@ if __name__ == "__main__":
     out = pathlib.Path(".")
 
     make_index(src=src, out=out)
-    #make_participant_list(src=src, out=out / "participants")
     make_chapters(src=src / "chs", out=out / "chapters")
     make_chapters(src=src / "participants", out=out / "participants",
                   title="Participants")
