@@ -42,3 +42,12 @@ Atom is a text editor (one of the two you will try during this workshop):
 
 VS code is a text editor (one of the two you will try during this workshop):
 [https://code.visualstudio.com](https://code.visualstudio.com).
+
+# Github
+
+This is nothing to install. Create an account on github: a code sharing service
+used with Git. [https://github.com](https://github.com).
+
+Github is free but if you apply for a student pack (as a student this is an
+offer available to you) you can have various extras:
+[https://education.github.com/pack](https://education.github.com/pack).
