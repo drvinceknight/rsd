@@ -72,6 +72,7 @@ def make_chapters(src, out, title="Chapters"):
     Write all the chapters to `out`/chapters
     """
 
+    pathlib.Path(out).mkdir(exist_ok=True)
     chapters = []
     for path in sorted(src.glob("*md")):
         p = pathlib.Path(out / get_id(path))
@@ -94,7 +95,8 @@ if __name__ == "__main__":
     out = pathlib.Path(".")
 
     make_index(src=src, out=out)
-    #make_participant_list(src=src, out=out / "participants")
     make_chapters(src=src / "chs", out=out / "chapters")
+    make_chapters(src=src / "xtr", out=out / "extras",
+                  title="Extras")
     make_chapters(src=src / "participants", out=out / "participants",
                   title="Participants")
