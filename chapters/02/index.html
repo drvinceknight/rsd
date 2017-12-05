@@ -90,11 +90,164 @@ div.output_prompt {
       <div class="home">
         
     <h1>Introduction to Python</h1>
-<p>We will use Python:</p>
+<p>The programming language we will use in this course is Python.</p>
+<p>Python is a popular language in industry and research with a number of libraries
+very useful for mathematics:</p>
+<ul>
+<li>Symbolic mathematics with <code>sympy</code></li>
+<li>Numerical mathematics with <code>numpy</code></li>
+<li>Machine learning with <code>sklearn</code></li>
+<li>Data analysis with <code>pandas</code></li>
+</ul>
+<p>In this chapter we will go over some basic Python.</p>
+<h2>Using the Python interpreter</h2>
+<p>Open your command line and type:</p>
+<pre><code class="bash">python
+</code></pre>
+
+<p>This will start a prompt that looks something like:</p>
+<pre><code class="bash">
+Python 3.5.2 |Anaconda custom (64-bit)| (default, Jul  2 2016, 17:53:06) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; 
+
+</code></pre>
+
+<p>The <code>&gt;&gt;&gt;</code> indicates point at which you can type python code.</p>
+<p>Try the following (you can see the expected output):</p>
 <pre><code class="python">&gt;&gt;&gt; 2 + 2
 4
 
 </code></pre>
+
+<h2>Creating numeric variables</h2>
+<p>We can assign variables to values using the <code>=</code> operator:</p>
+<pre><code class="python">&gt;&gt;&gt; the_meaning_of_life = 42
+&gt;&gt;&gt; the_meaning_of_life = the_meaning_of_life + 2
+&gt;&gt;&gt; the_meaning_of_life
+44
+
+</code></pre>
+
+<h2>Creating boolean variables</h2>
+<p>We can create boolean values using a number of comparison operators which
+include:</p>
+<ul>
+<li><code>==</code> equals</li>
+<li><code>!=</code> not equals</li>
+<li><code>&gt;</code> strictly greater</li>
+<li><code>&gt;=</code> greater than or equal</li>
+</ul>
+<pre><code class="python">&gt;&gt;&gt; is_42 = the_meaning_of_life == 42
+&gt;&gt;&gt; is_42
+False
+&gt;&gt;&gt; greater_than_42 = the_meaning_of_life &gt; 42
+&gt;&gt;&gt; greater_than_42
+True
+
+</code></pre>
+
+<h2>Creating list variables</h2>
+<p>Python has an indexable structure called lists:</p>
+<pre><code class="python">&gt;&gt;&gt; numbers = [1, 2, 4, 5]
+&gt;&gt;&gt; max(numbers)
+5
+&gt;&gt;&gt; min(numbers)
+1
+&gt;&gt;&gt; sum(numbers)
+12
+&gt;&gt;&gt; numbers[0]
+1
+&gt;&gt;&gt; numbers[-2]
+4
+&gt;&gt;&gt; numbers.append(50)
+&gt;&gt;&gt; numbers
+[1, 2, 4, 5, 50]
+
+</code></pre>
+
+<h2>Using Python scripts</h2>
+<p>To start to write more sophisticated code (software) we can write code
+inside a file which we can then run using the command line.</p>
+<h3>Creating a new directory for the workshop</h3>
+<p>Open the command line and navigate to a directory of your choice (perhaps
+your desktop so that you can easily find this later) and create a new
+directory called <code>rsd-workshop</code>.</p>
+<h3>Writing a python script</h3>
+<p>Open one of the recommended text editors and create a new file in the
+<code>rsd-workshop</code> save it as <code>01-hello-world.py</code>.
+Inside the file write the following (ignore the <code>&gt;&gt;&gt;</code>):</p>
+<pre><code class="python">print(&quot;hello world&quot;)
+</code></pre>
+
+<h3>Running a python script</h3>
+<p>Using the command line, let us now "run" this file using the command line:</p>
+<pre><code class="bash">python 01-hello-world.py
+</code></pre>
+
+<p>You can in fact run various programming languages this way: saving them to a
+file in your editor of choice and running them with the correct command.</p>
+<p>This allows for flexibility as you can choose an editor that has features you
+enjoy and customise it to work for you.</p>
+<h2>If statements</h2>
+<p>We can use boolean variables to create logical statements.</p>
+<p>Write a file called <code>02-if-statements.py</code>, include the following code and run
+it.</p>
+<p><strong>Ignore the <code>&gt;&gt;&gt;</code>, <code>...</code> and the output, this is here for testing purposes.</strong></p>
+<pre><code class="python">&gt;&gt;&gt; N = 572
+&gt;&gt;&gt; if N % 2 == 0:
+...     print(&quot;N is even&quot;)
+... else:
+...     print(&quot;N is odd&quot;)
+N is even
+
+</code></pre>
+
+<p><strong>Note</strong> white space and indentation is important in python. The indented code
+block indicate what code to execute if the boolean variable <code>N % 2 == 0</code> is
+<code>True</code>.</p>
+<h2>While loops</h2>
+<p>It is possible to repeat code using <code>while</code> loops which will repeatedly check a
+boolean variable.</p>
+<p>Write a file called <code>03-while-loops.py</code>, include the following code and run
+it.</p>
+<pre><code class="python">&gt;&gt;&gt; N = 0
+&gt;&gt;&gt; even_number_count = 0
+&gt;&gt;&gt; while N &lt; 10:
+...     if N % 2 == 0:
+...         even_number_count = even_number_count + 1
+...     N = N + 1
+&gt;&gt;&gt; print(even_number_count)
+5
+
+</code></pre>
+
+<h2>Functions</h2>
+<p>It is possible to create functions in python which we will use later to write
+modular code.</p>
+<p>Write a file called <code>04-functions.py</code>, include the following code and run it.</p>
+<pre><code class="python">&gt;&gt;&gt; def count_even_numbers(upper_limit):
+...     N = 0
+...     even_number_count = 0
+...     while N &lt; upper_limit:
+...         if N % 2 == 0:
+...             even_number_count = even_number_count + 1
+...         N = N + 1
+...     return even_number_count
+&gt;&gt;&gt; print(count_even_numbers(10))
+5
+&gt;&gt;&gt; print(count_even_numbers(42))
+21
+
+</code></pre>
+
+<p><strong>Exercise</strong></p>
+<p>Write some code to compute and compare both sides of the following equation, for
+varying values of $N$.</p>
+<p>$$
+\sum_{i=1}^Ni=\frac{N(N+1)}{2}
+$$</p>
 
       </div>
   </div>
