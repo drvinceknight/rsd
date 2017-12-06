@@ -1,2 +1,4 @@
 .cache/
 docs/_build/
+*mypy*
+*__pycache__*
