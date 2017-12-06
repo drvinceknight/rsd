@@ -89,16 +89,100 @@ div.output_prompt {
     <div class="wrap">
       <div class="home">
         
-    <h1>LaTeX</h1>
-<p>We can use LaTeX</p>
-<pre><code class="tex">\documentclass{article}
-
-\usepackage{tikz}
-
-\begin{document}
-    Hello
-\end{document}
-</code></pre>
+    <h1>Programming best practice</h1>
+<p>In this chapter we will consider a number of pillars of software development:</p>
+<ol>
+<li>Modularisation;</li>
+<li>Documentation;</li>
+<li>Automated testing.</li>
+</ol>
+<p>We will do this by writing software to find the prime factors of an integer.</p>
+<h2>Basic scripting</h2>
+<p>Consider the file <a href="/rsd/assets/code/01-find_primes.py"><code>01-find_primes.py</code></a>.</p>
+<p>Is it clear what this function is doing?</p>
+<h2>Comments</h2>
+<p>Consider the file <a href="/rsd/assets/code/02-find_primes.py"><code>02-find_primes.py</code></a>.</p>
+<p>Is this better?</p>
+<p>Do all the comments explain what is happening?</p>
+<h2>Better variable names</h2>
+<p>Consider the file <a href="/rsd/assets/code/03-find_primes.py"><code>03-find_primes.py</code></a>.</p>
+<p>Using verbose/explicit variable names improves the code readability.</p>
+<p>Note that now, some comments become useless: in fact some become "lies". Best
+practice is to in fact comment code only when absolutely necessary and instead
+rely on so called "self documented code".</p>
+<h2>Modularity</h2>
+<p>Consider the 3 files:</p>
+<ul>
+<li><a href="/rsd/assets/code/is_prime.py"><code>is_prime.py</code></a></li>
+<li><a href="/rsd/assets/code/repeat_divide.py"><code>repeat_divide.py</code></a></li>
+<li><a href="/rsd/assets/code/find_primes.py"><code>find_primes.py</code></a></li>
+</ul>
+<p>Note here that we have broken each step of the algorithm in to it's own script
+and further more we have documented each function using a specific documentation
+as opposed to comments.</p>
+<p>By breaking code in to little parts and clearly documenting (both through the
+name of the function and appropriate use of comments) it becomes clearer what
+each step does and also ensures that comments do not become lies.</p>
+<h2>Testing</h2>
+<p>Open the 3 files:</p>
+<ul>
+<li><a href="/rsd/assets/code/test_is_prime.py"><code>test_is_prime.py</code></a></li>
+<li><a href="/rsd/assets/code/test_repeat_divide.py"><code>test_repeat_divide.py</code></a></li>
+<li><a href="/rsd/assets/code/test_find_primes.py"><code>test_find_primes.py</code></a></li>
+</ul>
+<p>These files include code to ensure that our code does what it is expected to do.</p>
+<p>In <code>test_is_prime.py</code> we see using a simple <code>if</code> statement that would check if
+if the code is incorrect but from then on we use a Python statement called
+<code>assert</code> which does this in a simpler way. Most languages have something
+similar.</p>
+<h2>Code convention</h2>
+<p>If you look through the code carefully above you will see that the style is
+consistent across each file:</p>
+<ul>
+<li>Variable and function names all use "snake case" (as opposed to for example
+  "camel case": <code>IsPrime</code>).</li>
+<li>There are less than 80 characters in every line.</li>
+<li>The documentation follows a consistent style: listing "Inputs" and "Outputs".</li>
+</ul>
+<p>This is important. A consistent style convention
+makes readability of the code easier.</p>
+<p>The actual style convention used is not important, just that a given convention
+is used.</p>
+<p>Most languages have an accepted convention:</p>
+<ul>
+<li>Python has <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></li>
+<li>C++ has a few but <a href="http://www.stroustrup.com/bs_faq2.html">Bjarne
+  Stroustrup's</a> is popular.o</li>
+<li>Java also has a few, here is <a href="https://google.github.io/styleguide/javaguide.html">Google's
+  one</a>.</li>
+</ul>
+<p>Be sure to use a given convention and aim to stick to it. Your editor almost
+certainly has a plugin or similar that checks the style for you. Don't be
+afraid to break a given rule it it makes sense to do so: these are all meant to
+e helpful and not constraining.</p>
+<h2>Summary</h2>
+<p>There are three aspects to writing good software:</p>
+<ul>
+<li>Modularity: break code in to small components that are meaningful and easier
+  to debug.</li>
+<li>Documentation: document your code. Do this by choosing verbose and meaningful
+  variable and function names but also by writing a "manual" for each part of
+  your code.</li>
+<li>Testing: write a test for your code. This ensures that you know your code does
+  what it's supposed to do. It will also prove invaluable when it comes to
+  debugging as you can immediately find out which part of your code doesn't
+  work.</li>
+</ul>
+<p>These 3 things are all as important as each and good software requires all
+three. You might well have more fun working on a particular aspect of it but do
+not prioritise any one area over another.</p>
+<h1>Tip</h1>
+<p>One approach to writing good code is to start by writing the test and then work
+backwards by writing the function to make the test pass:</p>
+<ol>
+<li>This ensures your test fails (and isn't passing coincidentally).</li>
+<li>This often helps conceptualise what you want your function to do.</li>
+</ol>
 
       </div>
   </div>
