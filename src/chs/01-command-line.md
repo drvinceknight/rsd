@@ -185,7 +185,7 @@ mkdir <directory_name>
 Experiment with creating a directory for this workshop:
 
 ```bash
-mkdir rsd
+mkdir rsd-workshop
 ```
 
 As an exercise, move in to that directory and create two further directories:

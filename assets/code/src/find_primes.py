@@ -13,7 +13,6 @@ def obtain_prime_factorisation(N):
         - a list of the exponents of the prime factors
     """
     factors = []
-    exponents = []
     potential_factor = 1
 
     while N > 1:
@@ -24,10 +23,9 @@ def obtain_prime_factorisation(N):
             N, exponent = repeat_divide.repeat_divide_number(N, potential_factor)
 
             if exponent > 0:
-                factors.append(potential_factor)
-                exponents.append(exponent)
+                factors.append((potential_factor, exponent))
 
-    return factors, exponents
+    return factors
 
 print(obtain_prime_factorisation(2 ** 3 * 11 * 23))
 print(obtain_prime_factorisation(7))

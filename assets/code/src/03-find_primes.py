@@ -1,6 +1,5 @@
 def prime_factorisation(N):
     factors = []  # Create empty lists for factors
-    exponents = []  # Create empty list for exponnts
     potential_factor = 1  # Start with the potential factor
     while N > 1:  # Check all numbers until N
         potential_factor += 1
@@ -16,9 +15,8 @@ def prime_factorisation(N):
                 count += 1
                 N = int(N / potential_factor)
             if count > 0:
-                factors.append(potential_factor)
-                exponents.append(count)
-    return factors, exponents
+                factors.append((potential_factor, count))
+    return factors
 
 print(prime_factorisation(2 ** 3 * 11 * 23))
 print(prime_factorisation(7))

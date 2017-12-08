@@ -90,15 +90,235 @@ div.output_prompt {
       <div class="home">
         
     <h1>LaTeX</h1>
-<p>We can use LaTeX</p>
+<p>LaTeX is the main package used in Mathematics for preparing documents (thesis,
+articles etc).</p>
+<h2>Creating a simple document</h2>
+<p>Open a new file in your editor and write the following:</p>
 <pre><code class="tex">\documentclass{article}
-
-\usepackage{tikz}
 
 \begin{document}
     Hello
 \end{document}
 </code></pre>
+
+<p>Save this file (in <code>rsd-workshop</code>) as <code>main.tex</code>.</p>
+<p>Now open your command line and navigate to <code>rsd-workshop</code> and run the following
+command:</p>
+<pre><code class="bash">pdflatex main.tex
+</code></pre>
+
+<p>This will create a pdf file <code>main.pdf</code>.</p>
+<h2>Calling one document from another</h2>
+<p>In <a href="../01/">Chapter 01</a> we created a sub directory called <code>tex</code>. In that
+directory create a new LaTeX file called <code>chapter-01.tex</code>:</p>
+<pre><code class="tex">Let us investigate the number of prime factors of integers.
+</code></pre>
+
+<p>Now modify <code>main.tex</code> to be:</p>
+<pre><code class="tex">\documentclass{article}
+
+\title{The number of prime factors}
+
+\begin{document}
+    \maketitle
+    \input{tex/chapter-01.tex}
+\end{document}
+</code></pre>
+
+<p>Now "compile" `main.tex:</p>
+<pre><code class="bash">pdflatex main.tex
+</code></pre>
+
+<p>This <code>input</code> command allows us to keep our directory structure clean and
+organised.</p>
+<h2>Directory structure</h2>
+<p>In general keeping a directory structure clear and well structured is helpful.
+The following suggested structure is one of many possible ways of doing things.</p>
+<p>Let us move all the previously written python files to the <code>src</code> (source)
+directory.</p>
+<p>Thus, our directory should look like this:</p>
+<pre><code>|--- rsd
+     main.tex
+     main.pdf
+     main.*
+     |--- tex
+          |--- chapter-01.tex
+     |--- src
+          |--- find_primes_v1.py
+          |--- find_primes_v2.py
+          |--- find_primes_v3.py
+          |--- find_primes.py
+          |--- is_prime.py
+          |--- repeat_divide.py
+          |--- test_find_primes.py
+          |--- test_is_prime.py
+          |--- test_repeat_divide.py
+
+</code></pre>
+
+<p>Let us write another script that counts <strong>and</strong> plots the number of prime
+factors for all integers less than 100. In <code>src</code> create
+<a href="/rsd/assets/code/src/scatter_plot_of_prime_factors.py"><code>scatter_plot_of_prime_factors.py</code></a>
+(note: the name of the file).</p>
+<p><strong>Note</strong> When we run that file, the <code>print</code> statements of the file it "imports"
+are run. We can remove them.</p>
+<p>Now let us include this plot in our <code>chapter-01.tex</code>:</p>
+<pre><code class="tex">Let us investigate the number of prime factors of integers.
+
+Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
+factors for each integer less than 100.
+
+\begin{center}
+    \begin{figure}[!hbtp]
+        \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
+        \caption{The number of prime factors of each integer}
+        \label{scatter_plot_of_prime_factors}
+    \end{figure}
+\end{center}
+</code></pre>
+
+<p><strong>Note</strong> when we do this we need to include <code>\include{graphicx}</code> in the preamble
+of <code>main.tex</code>.</p>
+<h2>Including research output in LaTeX</h2>
+<p>If you have research output created from software:</p>
+<ul>
+<li>Specific measures (counting something)</li>
+<li>Complex equations</li>
+<li>Data tables</li>
+</ul>
+<p>It is possible to make errors when writing these by hand (not relevant to the
+case of images of course) to your LaTeX document. Best practice is to output
+these from your software directly to a file that will be included.</p>
+<h3>Directly including text.</h3>
+<p>For example, let us write a python script to get the number with the most prime
+factors. In <code>src</code> create:
+<a href="/rsd/assets/code/src/largest_number_of_factors.py"><code>largest_number_of_factors.py</code></a>.</p>
+<p>This file creates <code>tex/largest_number_of_factors.tex</code>.
+We then can include the output directly in to <code>chapter-01.tex</code>:</p>
+<pre><code class="tex">Let us investigate the number of prime factors of integers.
+
+Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
+factors for each integer less than 100.
+
+\begin{center}
+    \begin{figure}[!hbtp]
+        \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
+        \caption{The number of prime factors of each integer}
+        \label{scatter_plot_of_prime_factors}
+    \end{figure}
+\end{center}
+
+The number with the most prime factors
+has\input{tex/largest_number_of_factors} prime factors.
+</code></pre>
+
+<h3>Including complex equations</h3>
+<p>At times, a computer algebra system might be used to manipulate an expression,
+in this case it could be worth outputting the output directly to file and
+reading it in. (Again, avoiding the opportunity for human error).</p>
+<p>Let us write a python script to generate the series expansion for the first 3
+terms of the lower bound of the number of primes less than $n$:</p>
+<p>$$
+\frac{n}{\log{n}}
+$$</p>
+<p>Create
+<a href="/rsd/assets/code/src/series_expansion_for_lower_bound.py"><code>series_expansion_for_lower_bound.py</code></a>
+we will use the
+Python library Sympy (for symbolic mathematics) that also has the ability to
+generate LaTeX directly from it's output (similar capabilities exist in other
+computer algebra systems).</p>
+<p>This creates <code>tex/series_expansion_for_lower_bound.tex</code>.
+Now let us modify the <code>chapter-01.tex</code> to include this:</p>
+<pre><code class="tex">Let us investigate the number of prime factors of integers.
+
+Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
+factors for each integer less than 100.
+
+\begin{center}
+    \begin{figure}[!hbtp]
+        \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
+        \caption{The number of prime factors of each integer}
+        \label{scatter_plot_of_prime_factors}
+    \end{figure}
+\end{center}
+
+The number with the most prime factors
+has \input{tex/largest_number_of_factors}prime factors.
+
+The number of factors is probably related to the number of primes which has
+a lower bound given by:
+
+\small
+\[
+\pi(n)=\frac{n}{\log{n}}=\input{tex/series_expansion_for_lower_bound.tex}
+\]
+
+</code></pre>
+
+<h3>Including tables</h3>
+<p>Finally, you might similarly have generated some data that you'd like to include
+in the form of a table.</p>
+<p>To avoid human error we can generate the LaTeX code for a table directly in
+code.</p>
+<p>With python we will do this with a library called pandas (which implements a
+dataframe similar to R). Similar capabilities exist in other languages or the
+table code could be generated directly.</p>
+<p>Let us write
+<a href="/rsd/assets/code/src/number_of_factors_table.py"><code>number_of_factors_table.py</code></a>.
+This creates <code>tex/number_of_factors_table.tex</code>.
+Let us include this in the LaTeX document:</p>
+<pre><code class="tex">Let us investigate the number of prime factors of integers.
+
+Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
+factors for each integer less than 100.
+
+\begin{center}
+    \begin{figure}[!hbtp]
+        \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
+        \caption{The number of prime factors of each integer}
+        \label{scatter_plot_of_prime_factors}
+    \end{figure}
+\end{center}
+
+Table~\ref{tab:number_of_factors_table} shows these counts for \(95\leq
+n\leq 100\).
+
+\begin{center}
+    \begin{table}[!hbtp]
+        \input{tex/number_of_factors_table.tex}
+    \end{table}
+\end{center}
+
+The number with the most prime factors
+has\input{tex/largest_number_of_factors} prime factors.
+
+The number of factors is probably related to the number of primes which has
+a lower bound given by:
+
+\[
+\pi(n)=\frac{n}{\log{n}}=\input{tex/series_expansion_for_lower_bound.tex}
+\]
+</code></pre>
+
+<p><strong>Note</strong> when we do this we need to include <code>\include{booktabs}</code> in the preamble
+of <code>main.tex</code>.</p>
+<h2>Summary</h2>
+<p>A lot of the principles to writing good software apply to writing good LaTeX.
+The particular choice of directory structure suggested here is in not a hard
+rule but it allows for a consistent approach that you can use on a number of
+projects.</p>
+<h2>Tip</h2>
+<p>Try to line break your LaTeX source code: a paragraph in the rendered pdf
+corresponds to a text separated by a blank line in the source. The reason for
+this will become clear in the next chapter.</p>
+<h2>Exercise</h2>
+<ol>
+<li>Use the following code that counts how many numbers all equally have the most
+   factors:
+   <a href="/rsd/assets/code/src/count_maxima_for_number_of_primes.py">count_maxima_for_number_of_primes.py</a></li>
+<li>Modify all previous code to repeat the analysis for numbers between 1 and
+   250.</li>
+</ol>
 
       </div>
   </div>
