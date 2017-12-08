@@ -98,14 +98,14 @@ div.output_prompt {
 </ol>
 <p>We will do this by writing software to find the prime factors of an integer.</p>
 <h2>Basic scripting</h2>
-<p>Consider the file <a href="/rsd/assets/code/01-find_primes.py"><code>01-find_primes.py</code></a>.</p>
+<p>Consider the file <a href="/rsd/assets/code/src/find_primes_v1.py"><code>find_primes.py</code></a>.</p>
 <p>Is it clear what this function is doing?</p>
 <h2>Comments</h2>
-<p>Consider the file <a href="/rsd/assets/code/02-find_primes.py"><code>02-find_primes.py</code></a>.</p>
+<p>Consider the file <a href="/rsd/assets/code/src/find_primes_v2.py"><code>find_primes.py</code></a>.</p>
 <p>Is this better?</p>
 <p>Do all the comments explain what is happening?</p>
 <h2>Better variable names</h2>
-<p>Consider the file <a href="/rsd/assets/code/03-find_primes.py"><code>03-find_primes.py</code></a>.</p>
+<p>Consider the file <a href="/rsd/assets/code/src/find_primes_v3.py"><code>find_primes.py</code></a>.</p>
 <p>Using verbose/explicit variable names improves the code readability.</p>
 <p>Note that now, some comments become useless: in fact some become "lies". Best
 practice is to in fact comment code only when absolutely necessary and instead
@@ -113,9 +113,9 @@ rely on so called "self documented code".</p>
 <h2>Modularity</h2>
 <p>Consider the 3 files:</p>
 <ul>
-<li><a href="/rsd/assets/code/is_prime.py"><code>is_prime.py</code></a></li>
-<li><a href="/rsd/assets/code/repeat_divide.py"><code>repeat_divide.py</code></a></li>
-<li><a href="/rsd/assets/code/find_primes.py"><code>find_primes.py</code></a></li>
+<li><a href="/rsd/assets/code/src/is_prime.py"><code>is_prime.py</code></a></li>
+<li><a href="/rsd/assets/code/src/repeat_divide.py"><code>repeat_divide.py</code></a></li>
+<li><a href="/rsd/assets/code/src/find_primes.py"><code>find_primes.py</code></a></li>
 </ul>
 <p>Note here that we have broken each step of the algorithm in to it's own script
 and further more we have documented each function using a specific documentation
@@ -126,9 +126,9 @@ each step does and also ensures that comments do not become lies.</p>
 <h2>Testing</h2>
 <p>Open the 3 files:</p>
 <ul>
-<li><a href="/rsd/assets/code/test_is_prime.py"><code>test_is_prime.py</code></a></li>
-<li><a href="/rsd/assets/code/test_repeat_divide.py"><code>test_repeat_divide.py</code></a></li>
-<li><a href="/rsd/assets/code/test_find_primes.py"><code>test_find_primes.py</code></a></li>
+<li><a href="/rsd/assets/code/src/test_is_prime.py"><code>test_is_prime.py</code></a></li>
+<li><a href="/rsd/assets/code/src/test_repeat_divide.py"><code>test_repeat_divide.py</code></a></li>
+<li><a href="/rsd/assets/code/src/test_find_primes.py"><code>test_find_primes.py</code></a></li>
 </ul>
 <p>These files include code to ensure that our code does what it is expected to do.</p>
 <p>In <code>test_is_prime.py</code> we see using a simple <code>if</code> statement that would check if
@@ -176,7 +176,7 @@ e helpful and not constraining.</p>
 <p>These 3 things are all as important as each and good software requires all
 three. You might well have more fun working on a particular aspect of it but do
 not prioritise any one area over another.</p>
-<h1>Tip</h1>
+<h2>Tip</h2>
 <p>One approach to writing good code is to start by writing the test and then work
 backwards by writing the function to make the test pass:</p>
 <ol>

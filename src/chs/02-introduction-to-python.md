@@ -100,16 +100,10 @@ Python has an indexable structure called lists:
 To start to write more sophisticated code (software) we can write code
 inside a file which we can then run using the command line.
 
-### Creating a new directory for the workshop
-
-Open the command line and navigate to a directory of your choice (perhaps
-your desktop so that you can easily find this later) and create a new
-directory called `rsd-workshop`.
-
 ### Writing a python script
 
 Open one of the recommended text editors and create a new file in the
-`rsd-workshop` save it as `01-hello-world.py`.
+`rsd-workshop` (created in [Chapter 01](../01/)) save it as `01-hello-world.py`.
 Inside the file write the following (ignore the `>>>`):
 
 ```python

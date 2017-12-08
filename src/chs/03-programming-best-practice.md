@@ -10,13 +10,13 @@ We will do this by writing software to find the prime factors of an integer.
 
 ## Basic scripting
 
-Consider the file [`01-find_primes.py`]({{root}}/assets/code/01-find_primes.py).
+Consider the file [`find_primes.py`]({{root}}/assets/code/src/find_primes_v1.py).
 
 Is it clear what this function is doing?
 
 ## Comments
 
-Consider the file [`02-find_primes.py`]({{root}}/assets/code/02-find_primes.py).
+Consider the file [`find_primes.py`]({{root}}/assets/code/src/find_primes_v2.py).
 
 Is this better?
 
@@ -24,7 +24,7 @@ Do all the comments explain what is happening?
 
 ## Better variable names
 
-Consider the file [`03-find_primes.py`]({{root}}/assets/code/03-find_primes.py).
+Consider the file [`find_primes.py`]({{root}}/assets/code/src/find_primes_v3.py).
 
 Using verbose/explicit variable names improves the code readability.
 
@@ -36,9 +36,9 @@ rely on so called "self documented code".
 
 Consider the 3 files:
 
-- [`is_prime.py`]({{root}}/assets/code/is_prime.py)
-- [`repeat_divide.py`]({{root}}/assets/code/repeat_divide.py)
-- [`find_primes.py`]({{root}}/assets/code/find_primes.py)
+- [`is_prime.py`]({{root}}/assets/code/src/is_prime.py)
+- [`repeat_divide.py`]({{root}}/assets/code/src/repeat_divide.py)
+- [`find_primes.py`]({{root}}/assets/code/src/find_primes.py)
 
 Note here that we have broken each step of the algorithm in to it's own script
 and further more we have documented each function using a specific documentation
@@ -52,9 +52,9 @@ each step does and also ensures that comments do not become lies.
 
 Open the 3 files:
 
-- [`test_is_prime.py`]({{root}}/assets/code/test_is_prime.py)
-- [`test_repeat_divide.py`]({{root}}/assets/code/test_repeat_divide.py)
-- [`test_find_primes.py`]({{root}}/assets/code/test_find_primes.py)
+- [`test_is_prime.py`]({{root}}/assets/code/src/test_is_prime.py)
+- [`test_repeat_divide.py`]({{root}}/assets/code/src/test_repeat_divide.py)
+- [`test_find_primes.py`]({{root}}/assets/code/src/test_find_primes.py)
 
 These files include code to ensure that our code does what it is expected to do.
 
@@ -110,7 +110,7 @@ These 3 things are all as important as each and good software requires all
 three. You might well have more fun working on a particular aspect of it but do
 not prioritise any one area over another.
 
-# Tip
+## Tip
 
 One approach to writing good code is to start by writing the test and then work
 backwards by writing the function to make the test pass:

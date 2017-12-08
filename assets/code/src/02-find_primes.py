@@ -1,6 +1,5 @@
 def pfact(N):
     f = []  # Create empty lists for factors
-    e = []  # Create empty list for exponnts
     i = 1  # Start with the potential factor
     while N > 1:  # Check all numbers until N
         i = i + 1  # add 1 to i
@@ -16,9 +15,8 @@ def pfact(N):
                 c = c + 1  # Add 1 to c
                 N = N / i  # Divide M by factor
             if c > 0:
-                f.append(i)
-                e.append(c)
-    return f, e
+                f.append((i, c))
+    return f
 
 print(pfact(2 ** 3 * 11 * 23))
 print(pfact(7))

@@ -1,6 +1,5 @@
 def primes(N):
     f = []
-    e = []
     i = 1
     while N > 1:
         i = i + 1
@@ -16,9 +15,8 @@ def primes(N):
                 c = c + 1
                 N = N / i
             if c > 0:
-                f.append(i)
-                e.append(c)
-    return f, e
+                f.append((i, c))
+    return f
 
 print(primes(2 ** 3 * 11 * 23))
 print(primes(7))

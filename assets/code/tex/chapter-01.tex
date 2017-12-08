@@ -1,0 +1,32 @@
+Let us investigate the number of prime factors of integers.
+
+Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
+factors for each integer less than 100.
+
+\begin{center}
+    \begin{figure}[!hbtp]
+        \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
+        \caption{The number of prime factors of each integer}
+        \label{scatter_plot_of_prime_factors}
+    \end{figure}
+\end{center}
+
+Table~\ref{tab:number_of_factors_table} shows these counts for \(95\leq
+n\leq 100\).
+
+\begin{center}
+    \begin{table}[!hbtp]
+        \input{tex/number_of_factors_table.tex}
+    \end{table}
+\end{center}
+
+The number with the most prime factors
+has\input{tex/largest_number_of_factors} prime factors.
+
+The number of factors is probably related to the number of primes which has
+a lower bound given by:
+
+\small
+\[
+\pi(n)=\frac{n}{\log{n}}=\input{tex/series_expansion_for_lower_bound.tex}
+\]
