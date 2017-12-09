@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research software development</title>
+
+  <link rel="stylesheet" href="/rsd/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/rsd/assets/favicon.ico"/>
+
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script
+src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+   
+<style media="screen" type="text/css">
+
+
+div.input_prompt {
+  color: #303F9F;
+}
+
+div.output_prompt {
+  color: #D84315;
+}
+</style>
+
+    <!-- Loading mathjax macro -->
+    <!-- Load mathjax -->
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        <!-- MathJax configuration -->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            // Center justify equations in code and markdown cells. Elsewhere
+            // we use CSS to left justify single line equations in code cells.
+            displayAlign: 'center',
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}},
+                linebreaks: { automatic: true }
+            }
+        });
+        </script>
+        <!-- End of mathjax configuration --></head>
+
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-38016329-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+</head>
+<body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+ <div class="page-content">
+    <div class="wrap">
+      <div class="home">
+        
+    <h1>Using github</h1>
+<p>Whilst <code>git</code> is a powerful and important tool to use even when working on a
+project alone it becomes very powerful when working in collaboration with
+others. In particular the notion of working on parallel branches extends to
+different individuals working on parallel branches.</p>
+<p><strong>TODO Include an image here?</strong></p>
+<p>To do this, we genuinely use a <code>remote</code> version of the repository. This can be
+anywhere, even a copy of the repository in another folder on your computer.
+One of the most popular remote services is called <code>github</code>.</p>
+<p><strong>Note</strong> that the entire history of any copy of a <code>git</code> repository always
+travels with that repository.</p>
+<h2>Forking a repository</h2>
+<p>The notes you are currently reading are on <code>github</code>:
+<a href="https://github.com/drvinceknight/rsd">github.com/drvinceknight/rsd</a>.</p>
+<p>Let us start by creating your own copy of that repository.</p>
+<p>After signing in to github, click on <code>Fork</code> button.</p>
+<p><strong>TODO Include screen shot.</strong></p>
+<p>This then creates a copy of the repository under your account.</p>
+<p><strong>TODO Include screen shot.</strong></p>
+<h2>Cloning a repository</h2>
+<p>Now let us clone this repository locally: so that you will have your own copy of
+it.</p>
+<p>Click on <code>Clone or Download</code> and copy the https address of this repository:</p>
+<p><strong>TODO Include screen shot</strong></p>
+<p>Exit any previous directories and open your command line and type:</p>
+<pre><code class="bash">git clone &lt;copied-address&gt;
+</code></pre>
+
+<p>This creates a copy of all the source files for the course. You're welcome to
+look around and see the source files. Note that you can also type <code>git log</code> to
+see the entire history of how the course was written.</p>
+<h2>Creating a pull request</h2>
+<p>If you go to <a href="/rsd/participants/">participants list</a> you can see a list of
+everyone who has participated in this course. You are now going to add yourself
+to that list.</p>
+<p>First branch:</p>
+<pre><code class="bash">git branch add-&lt;my-name&gt;-to-participant-list
+git checkout add-&lt;my-name&gt;-to-participant-list
+</code></pre>
+
+<p>Now navigate to <code>src/participants/</code>. There you can see some <code>.md</code> files. Copy
+one of them:</p>
+<pre><code class="bash">cp vince.md &lt;my-name&gt;.md
+</code></pre>
+
+<p>Open that file with your editor and modify it to describe yourself. For more
+information about markdown see <strong>TODO:
+https://github.com/drvinceknight/rsd/issues/29</strong>.</p>
+<p>Once that is done, let us commit that change:</p>
+<pre><code class="bash">git add &lt;my-name&gt;.md
+git commit
+</code></pre>
+
+<p>A sensible commit message would be something like:</p>
+<pre><code>Add &lt;my-name&gt; as list of participants
+
+I took part in the course on &lt;date&gt;.
+
+</code></pre>
+
+<p>This change only exists on your computer. For it to make it to the main course
+website, someone with control over the course website needs to be merge the
+changes in.</p>
+<p>So you now need to "request" that that merge happens. Github offers the
+capability to do this using what is called a "Pull request" (PR)</p>
+<h2>Making a PR</h2>
+<p>First we need to send the changes from your computer back to your remote copy.</p>
+<p>Let us see what git knows about the remote:</p>
+<pre><code class="bash">git remote -v
+</code></pre>
+
+<p>(The <code>-v</code> is short for "verbose")</p>
+<p>This gives:</p>
+<pre><code class="bash">origin  git@github.com:drvinceknight/rsd.git (fetch)
+origin  git@github.com:drvinceknight/rsd.git (push)
+</code></pre>
+
+<p>This shows that we have a single remote with short alias <code>origin</code> (note the
+actual address you see might be different).</p>
+<p>We want to push to that remote:</p>
+<pre><code class="bash">git push origin add-&lt;my-name&gt;-to-participant-list
+</code></pre>
+
+<p>After running that command and authenticating your changes will be on your own
+branch:</p>
+<p><strong>TODO</strong> Include screenshot</p>
+<p>Now you are ready to request that changes be merged.</p>
+<p><strong>TODO</strong> Include instructions and screenshot of opening a PR.</p>
+<p>When opening a PR you might notice that github will attempt to use the commit
+messages to enter the text in the PR message. This can be helpful but no matter
+what before clicking the "Open a PR" button try to ensure that you message
+follows these principles:</p>
+<ul>
+<li>Include the purpose of the PR: <code>this change to the code base will...</code></li>
+<li>Ask for specific feedback: <code>I attempted to do ... but would appreciate
+  specific feedback on that...</code></li>
+<li>Be polite and courteous: most open source projects are maintained by people who
+  are very busy.</li>
+</ul>
+<h2>Reviewing a PR</h2>
+<p>Once you have opened your PR it will be reviewed. The review might ask for some
+changes:</p>
+<p><strong>TODO</strong> Screenshot asking for a change</p>
+<p>If that's the case, make the changes locally, on the same branch. Stage and
+commit the changes. Then push them back to the same remote branch. This will
+automatically update the PR.</p>
+<p>Reviewing a PR (or more generally: doing a "code review") should be a helpful
+and positive experience for all involved. When you have the opportunity to (you
+will in the last part of this workshop) keep the following principles in mind:</p>
+<ul>
+<li>Do not request changes based on familiarity biais. Someone might not do
+  something in the same way you have but unless there is an objective reason
+  (not following a style guide, inefficiency etc...) there is no need to ask for
+  such a change.</li>
+<li>Do not be vague: <code>change this algorithm so that it evaluates terms based on
+  number of prime factors</code> could be vague and confusing. Offer constructive and
+  clear requests: including actual snippets of code.</li>
+<li>When suggesting specific lines of code: make sure you have tried them
+  yourself. This indeed would take time and a good code review does take time.</li>
+<li>Provide context: if there is a specific reason for a request, include the
+  context.</li>
+<li>Be positive: use "let us change this function to do this" as opposed to "I
+  don't like your function".</li>
+<li>Be polite and courteous: because life is short.</li>
+</ul>
+
+      </div>
+  </div>
+</div>
+
+
+</body>
+</html>
