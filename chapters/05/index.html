@@ -90,11 +90,602 @@ div.output_prompt {
       <div class="home">
         
     <h1>Version control</h1>
-<p>Version control with bash</p>
-<pre><code class="bash">$ git init
-$ git add
-$ git commit
+<p>When carrying out research it can be beneficial to be able to keep a log of
+the various steps along the way of in a project.</p>
+<p>One approach to do this is to save files with meaningful names, for example in
+<a href="../03/">Chapter 03</a> we used <code>...v1.py</code>, <code>...v2.py</code>, <code>...v3.py</code> to mark the
+progression of the file. This approach can lead to human error and also might
+miss some things.</p>
+<p>Another potential area for error is when collaborating with others. When working
+on a paper it is possible that two individuals work in parallel. At some point
+their parallel work must be recombined: this can be done manually (copying the
+work of one in to the work of the other) however, this again can lead to errors.</p>
+<p>This is where software helps: automated version control hands all this things
+over to software.</p>
+<p>The particular version control tool we will use is call <code>git</code>.</p>
+<p><code>git</code>, takes an initial look at all the files in your directory (we will start
+calling this a <strong>repository</strong>) and then keeps track of changes you tell it to.</p>
+<p>This can then be used to:</p>
+<ul>
+<li>examine the entire history of the project.</li>
+<li>rewind and retrieve a file from the past (this implies there is no longer any
+  need to use <code>...v1.py</code>, <code>...v2.py</code>, <code>...v3.py</code>).</li>
+<li>combine changes from two different parallel pieces of work.</li>
+</ul>
+<h2>Setting up git</h2>
+<p>Before we get started there are a couple of things we need to do to set up
+<code>git</code>. Recall that <code>git</code> keeps track of the entire history of a project, this
+does not only mean keeping track of what was done but also who did it (this is
+particularly important in collaborative work).</p>
+<p>We start by telling git who we are. Open your command line and type:</p>
+<pre><code class="bash">git config --global user.name &quot;Your Name&quot;
 </code></pre>
+
+<pre><code class="bash">git config --global user.email &quot;Your Email&quot;
+</code></pre>
+
+<p><strong>Note</strong> this is not data that is being collected by any cloud service or
+similar. It just stays with your project.</p>
+<p>At various times, <code>git</code> might want to open a text editor (this will be come
+clear very soon). Let us set up <code>git</code> to use your editor of choice.</p>
+<p><strong>Windows</strong></p>
+<p>To use Atom:</p>
+<pre><code class="bash">git config --global core.editor &quot;C:\Program Files (x86)\atom.exe --wait&quot;
+</code></pre>
+
+<p>To use VS code:</p>
+<pre><code class="bash">git config --global core.editor &quot;'C:\Program Files (x86)\Microsoft VS Code\code.exe' --wait&quot;
+</code></pre>
+
+<p>Note the path might be a bit different (depending on where atom/vs code was installed on
+your machine).</p>
+<p><strong>nix</strong></p>
+<p>To use Atom:</p>
+<pre><code class="bash">git config --global core.editor &quot;atom --wait&quot;
+</code></pre>
+
+<p>To use VS code:</p>
+<pre><code class="bash">git config --global core.editor &quot;code --wait&quot;
+</code></pre>
+
+<h2>Initialising a git repository</h2>
+<p>Let us start by creating a new directory: <code>rsd-checklist</code>.</p>
+<p>Inside that let us create a <code>main.tex</code> document which we will use to create a
+checklist of things learned on this course.</p>
+<pre><code class="tex">\documentclass{article}
+
+\title{Research software development checklist}
+
+\begin{document}
+\maketitle
+\end{document}
+</code></pre>
+
+<p>Now let us tell <code>git</code> to start keeping an eye on this repository. In the command
+line:</p>
+<pre><code class="bash">git init
+</code></pre>
+
+<p>You should then see a message saying that you have successfully initialised a
+git repository.</p>
+<h2>Staging and committing changes</h2>
+<p>Let us see what is the status of our repository:</p>
+<pre><code class="bash">git status
+</code></pre>
+
+<p>We should see something like:</p>
+<pre><code class="bash">On branch master
+
+Initial commit
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+        main.tex
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre>
+
+<p>There are various pieces of useful information here, first of all <code>main.tex</code> is not currently a tracked file.</p>
+<p>We are now going to track that file:</p>
+<pre><code class="bash">git add main.tex
+</code></pre>
+
+<p>If we run <code>git status</code> again we see:</p>
+<pre><code class="bash">On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+
+        new file:   main.tex
+
+</code></pre>
+
+<p>So the changes we have made to <code>main.tex</code> (ie starting the file) are ready to
+be "committed".</p>
+<pre><code class="bash">git commit
+</code></pre>
+
+<p>When doing this, your editor of choice should open up prompting you to write
+what is called a commit message.</p>
+<p>Type the following:</p>
+<pre><code class="md">Write blank checklist
+
+This file is currently empty but will include the various aspects of sustainable
+software development learnt on the 2 day rsd workshop.
+</code></pre>
+
+<p>Once you have written that, save and exit from your editor. <code>git</code> should confirm
+that you have successfully made your first commit.</p>
+<pre><code class="bash">[master (root-commit) 3c1e5ad] write blank checklist
+ 1 file changed, 7 insertions(+)
+ create mode 100644 main.tex
+</code></pre>
+
+<p>Now if we run <code>git status</code>, we see a message saying that everything in our
+repository is tracked and up to date:</p>
+<pre><code class="bash">On branch master
+nothing to commit, working directory clean
+</code></pre>
+
+<p><strong>Note</strong> A commit message is made up of 2 main components:</p>
+<pre><code class="md">&lt;Title of the commit&gt;
+
+&lt;Description of what was done&gt;
+</code></pre>
+
+<ul>
+<li>The title should be a description in the form of "if this commit is applied
+  <code>&lt;title of the commit&gt;</code> will happen". The convention is for this to be rather
+  short and to the point.</li>
+<li>The description can be as long as needed and should be a helpful explanation
+  of what is happening.</li>
+</ul>
+<p>A commit is a snapshot that <code>git</code> makes of your project, you should use this at
+meaningful steps of the progress of a project.</p>
+<h2>Tracking changes to files</h2>
+<p>Let us add our name to the checklist document:</p>
+<pre><code class="tex">\documentclass{article}
+
+\title{Research software development checklist}
+\author{Grace Hopper}
+
+\begin{document}
+\maketitle
+\end{document}
+</code></pre>
+
+<p>Save your file and then run <code>git status</code>. We now see that <code>git</code> is aware of a
+change to our file:</p>
+<pre><code class="bash">On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+        modified:   main.tex
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre>
+
+<p>To "stage" the file for a commit we use <code>git add</code> again:</p>
+<pre><code class="bash">git add main.tex
+</code></pre>
+
+<p>Now let us commit:</p>
+<pre><code class="bash">git commit
+</code></pre>
+
+<p>With the following commit message:</p>
+<pre><code class="md">add author name
+</code></pre>
+
+<p>In this particular case there is not much more needed than the title.</p>
+<p>Finally, we can check the status: <code>git status</code> to confirm that everything has
+been done correctly.</p>
+<h2>Ignoring files</h2>
+<p>Let us compile our LaTeX document:</p>
+<pre><code class="bash">pdflatex main.tex
+</code></pre>
+
+<p>Now if we check the status of our repository:</p>
+<pre><code class="bash">git status
+</code></pre>
+
+<p>We see that all the LaTeX auxiliary files are listed along with the pdf:</p>
+<pre><code class="bash">On branch master
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+        main.aux
+        main.log
+        main.pdf
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre>
+
+<p>To tell <code>git</code> to ignore these files (we only need the <code>tex</code> file) we will add them to a blank file entitled <code>.gitignore</code>. Open your editor and type</p>
+<pre><code>main.aux
+main.log
+main.pdf
+</code></pre>
+
+<p>Save that file as <code>.gitignore</code> and then run <code>git status</code> again. We see now that
+<code>git</code> is ignoring those 3 files but is aware of the <code>.gitignore</code> file. Let us
+add and commit that file:</p>
+<pre><code>git add .gigignore
+git commit
+</code></pre>
+
+<p>Use <code>add .gitignore</code> as the commit message.</p>
+<p>At a later stage we can always modify this
+<code>.gitignore</code> file (perhaps we might choose to tell <code>git</code> to track the pdf):</p>
+<h2>Exploring and using history</h2>
+<p>We have done a good job of keep track of the history of our project but let us
+see how that can be useful.</p>
+<p>First, let us confirm our repository is in the expected state with <code>git status</code>:</p>
+<pre><code class="bash">On branch master
+nothing to commit, working directory clean
+</code></pre>
+
+<p>Now, let us look at our history:</p>
+<pre><code class="bash">git log
+</code></pre>
+
+<p>This displays the full log of the project:</p>
+<pre><code class="bash">commit b116460039bb9ed1f79a980a7a71b5b75f0618b4
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 11:40:47 2017 +0000
+
+    add .gitignore
+
+commit 84c678c01ef099aeedc46c922feb38557cffd5c7
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 11:34:43 2017 +0000
+
+    add author name
+
+commit 3c1e5adc13069023d25a76570f092135d0eeb68c
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 10:59:04 2017 +0000
+
+    write blank checklist
+
+    This file is currently empty but will include the various aspects of
+    sustainable
+    software development learnt on the 2 day rsd workshop.
+</code></pre>
+
+<p>We see that there are 3 commits there, each with a seemingly random set of
+numbers and characters. This set of characters is called a "hash":</p>
+<p>The first commit with title <code>write blank checklist</code> has hash:
+<code>3c1e5adc13069023d25a76570f092135d0eeb68c</code>. <strong>Note</strong> that on your machines this
+hash will be different, in fact every hash is mathematically guaranteed to be
+unique, thus it is uniquely assigned to the changes made.</p>
+<p>One of the things that this hash allows us to do is to go back in time. Let us
+go back to the <code>main.tex</code> file before we added the author name. We do this with
+the <code>checkout</code> command and make use of the hash (simply copy it or type the
+first few characters). In the case of the example here, using the hash:</p>
+<pre><code class="bash">git checkout 3c1e5adc13069023d25 main.tex
+</code></pre>
+
+<p>If we now run <code>git status</code> we see that the file has changed:</p>
+<pre><code class="bash">On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+        modified:   main.tex
+
+</code></pre>
+
+<p>(Open <code>main.tex</code> and see that the author name is no longer there.)
+We could at this stage make more changes to <code>main.tex</code> and commit them as before.</p>
+<p>Or in this particular case we might want to return the file to the state it was.
+We can use <code>HEAD</code> which is shorthand for the hash corresponding to the last
+commit:</p>
+<pre><code>git checkout HEAD main.tex
+</code></pre>
+
+<p>If you run <code>git status</code> you will see that everything is back to how it was with
+the author name.</p>
+<h2>Creating branches</h2>
+<p>At the start of this chapter we discussed the ability to work in parallel thanks
+to <code>git</code>. This is done using something called "branches".</p>
+<p>When typing <code>git status</code> we have seen that one piece of information regularly
+given was <code>On branch master</code>. This is telling us which branch of "history" we
+are currently on. To view all branches:</p>
+<pre><code class="bash">git branch
+</code></pre>
+
+<p>This shows:</p>
+<pre><code class="bash">* master
+</code></pre>
+
+<p>So currently there is only one branch. Let us create a new branch called
+<code>add-list-of-topics</code>:</p>
+<pre><code class="bash">git branch add-list-of-topics
+</code></pre>
+
+<p>When we now type <code>git branch</code> we see that 2 branches exist but the active branch
+is indicated by <code>*</code>:</p>
+<pre><code class="bash">  add-list-of-topics
+* master
+</code></pre>
+
+<p>Let us now move to this new branch:</p>
+<pre><code class="bash">git checkout add-list-of-topics
+</code></pre>
+
+<p>Run <code>git branch</code> and then <code>git status</code> to see how this has worked.</p>
+<p>Let us now create a <code>tex</code> folder and in that folder let us write a
+<code>list-of-topics.tex</code> document:</p>
+<pre><code class="tex">\begin{itemize}
+    \item Using the command line to be able to control my machine. \checkmark
+    \item Use basic Python. \checkmark
+    \item Write modular code. \checkmark
+    \item Write documented code. \checkmark
+    \item Write automatde tested. \checkmark
+    \item Write modular LaTeX. \checkmark
+    \item Include outputs of software directly in LaTeX. \checkmark
+    \item Understanding of git.
+    \item Use github to collaboratively work on projects.
+\end{itemize}
+</code></pre>
+
+<p>Let us add and commit this file:</p>
+<pre><code class="bash">git add tex/list-of-topics.tex
+git commit
+</code></pre>
+
+<p>Let us now return to the <code>master</code> branch, we will come back to this list
+shortly.</p>
+<pre><code class="bash">git checkout master
+</code></pre>
+
+<p>Let us create a new branch called <code>change-page-width</code>. We'll use this branch to
+modify the page width:</p>
+<pre><code class="bash">git branch change-page-width
+git checkout change-page-width
+</code></pre>
+
+<p>Let us modify <code>main.tex</code> to include the following in the preamble:</p>
+<pre><code class="tex">\documentclass{article}
+
+\usepackage[margin=1.5cm, includefoot, footskip=30pt]{geometry}
+
+\title{Research software development checklist}
+
+\begin{document}
+\maketitle
+\end{document}
+</code></pre>
+
+<p>If you compile the document you should see it occupies the page better (there's
+not much text yet to be able to compare but you get the idea).</p>
+<p>Stage and commit this change and take a look at the log:</p>
+<pre><code class="bash">commit f252f5a6fcb79fb19c0bc8e7262a265da560b800
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 12:16:45 2017 +0000
+
+    change page width
+
+commit b116460039bb9ed1f79a980a7a71b5b75f0618b4
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 11:40:47 2017 +0000
+
+    add .gitignore
+
+commit 84c678c01ef099aeedc46c922feb38557cffd5c7
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 11:34:43 2017 +0000
+
+    add author name
+
+commit 3c1e5adc13069023d25a76570f092135d0eeb68c
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 10:59:04 2017 +0000
+
+    write blank checklist
+
+    This file is currently empty but will include the various aspects of
+    sustainable
+    software development learnt on the 2 day rsd workshop.
+
+</code></pre>
+
+<p>We see that the commit made on the <code>add-list-of-topics</code> branch does not appear
+here. This is the behaviour of <code>git log</code> it only shows the history of the
+current branch.</p>
+<p>Let us return to the <code>master</code> branch and see how to combine the work that has
+been done on each of these branches:</p>
+<pre><code class="bash">git checkout master
+</code></pre>
+
+<h2>Merging branches</h2>
+<p>Getting the work from one branch on to another branch is called "merging". Let
+us merge the <code>change-page-width</code> branch in to the <code>master</code> branch (which is our
+current branch).</p>
+<p><strong>Note</strong> before doing a merge it is always a good idea to check <code>git status</code> to
+ensure everything is in the state we required (e.g. that we are on the correct
+branch etc...).</p>
+<pre><code class="bash">git merge change-page-width
+</code></pre>
+
+<p>We should see something like:</p>
+<pre><code class="bash">Updating b116460..f252f5a
+Fast-forward
+ main.tex | 2 ++
+ 1 file changed, 2 insertions(+)
+</code></pre>
+
+<p>Recall, if you forget the name of branches you can always run <code>git
+branch</code> to see all the branches.</p>
+<p>Let us also merge our <code>add-list-of-topics</code> branch:</p>
+<pre><code class="bash">git merge add-list-of-topics
+</code></pre>
+
+<p>When doing merges sometimes <code>git</code> will open the editor asking for you to confirm
+the merge commit message. This is because there are various algorithms <code>git</code>
+uses to be able to merge and some require making a snapshot.</p>
+<p>If this happens during a merge, do not feel that you have to modify the commit
+message (unless you want to!).</p>
+<pre><code>Merge made by the 'recursive' strategy.
+ tex/list-of-topics.tex | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 tex/list-of-topics.tex
+</code></pre>
+
+<p>Your directory should now look like this:</p>
+<pre><code class="bash">|---rsd-checklist
+    |--- main.tex
+    |--- main.aux
+    |--- main.log
+    |--- main.pdf
+    |--- tex/
+         |--- list-of-topics.tex
+</code></pre>
+
+<p>We will make one final modification to <code>main.tex</code> to include the
+<code>list-of-topics.tex</code> file:</p>
+<pre><code class="tex">\documentclass{article}
+
+\usepackage[margin=1.5cm, includefoot, footskip=30pt]{geometry}
+\usepackage{amssymb}  % for the checkmark
+
+\title{Research software development checklist}
+\author{Grace Hopper}
+
+\begin{document}
+\maketitle
+
+\input{tex/list-of-topics.tex}
+\end{document}
+</code></pre>
+
+<p>Compile your document and take a look at your checklist!</p>
+<p>Before we commit this final change let us take a look at one final command:</p>
+<pre><code class="bash">git diff
+</code></pre>
+
+<p>This displays the difference between the current state of our repository and the
+last commit:</p>
+<pre><code class="bash">diff --git a/main.tex b/main.tex
+index bc59d80..4f26c4f 100644
+--- a/main.tex
++++ b/main.tex
+@@ -1,10 +1,13 @@
+ \documentclass{article}
+
+ \usepackage[margin=1.5cm, includefoot, footskip=30pt]{geometry}
++\usepackage{amssymb}  % for the checkmark
+
+ \title{Research software development checklist}
+ \author{Grace Hopper}
+
+ \begin{document}
+ \maketitle
++
++\input{tex/list-of-topics.tex}
+ \end{document}
+(END)
+
+</code></pre>
+
+<p>We have added <code>\usepackage{amssymb}  % for the checkmark</code> and
+<code>\input{tex/list-of-topics.tex}</code>.</p>
+<p>Now let us stage and then commit this and look at the log:</p>
+<pre><code class="bash">commit c1689ea9c56603882e19a6ccf90625190db29ec7
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 12:31:34 2017 +0000
+
+    include list of topics in main doc
+
+commit 2e94caa07c10beb47e767f7800bf9852b9931783
+Merge: f252f5a b71bdc8
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 12:23:42 2017 +0000
+
+    Merge branch 'add-list-of-topics'
+
+commit f252f5a6fcb79fb19c0bc8e7262a265da560b800
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 12:16:45 2017 +0000
+
+    change page width
+
+commit b71bdc809c48e01fd34d60476d09baae34402b63
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 12:07:52 2017 +0000
+
+    write list of topics
+
+    Include checkmark for things we have currently covered.
+
+commit b116460039bb9ed1f79a980a7a71b5b75f0618b4
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 11:40:47 2017 +0000
+
+    add .gitignore
+
+commit 84c678c01ef099aeedc46c922feb38557cffd5c7
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 11:34:43 2017 +0000
+
+    add author name
+
+commit 3c1e5adc13069023d25a76570f092135d0eeb68c
+Author: Vince Knight &lt;vincent.knight@gmail.com&gt;
+Date:   Sat Dec 9 10:59:04 2017 +0000
+
+    write blank checklist
+
+    This file is currently empty but will include the various aspects of
+    sustainable
+    software development learnt on the 2 day rsd workshop.
+
+</code></pre>
+
+<p>We can see the entire history of what we have written and could potentially go
+back to any stage. Furthermore, our directory is tidy without the need for
+various confusin suffixes at the end of each file.</p>
+<p><strong>Note</strong> Branching is "cheap" in terms of the amount of space it takes up. Thus
+it's always a good idea to branch when working on a project if you want to try
+out something.</p>
+<p><strong>Note</strong> It is possible to create something called a "merge conflict". This
+occurs when mergeing changes that <code>git</code> is unable to merge automatically. For
+example changing the same line in a file. In this case, git will ask for you to
+modify the file and commit it to complete the merge.</p>
+<h2>Summary</h2>
+<p>Here are the commands we have seen in this chapter:</p>
+<ul>
+<li><code>git init</code>: Create a git repository</li>
+<li><code>git add &lt;file&gt;</code>: Start tracking <code>&lt;file&gt;</code> and/or stage the changes to <code>&lt;file&gt;</code>
+  ready to be committed.</li>
+<li><code>git status</code>: See the current status of your git repository.</li>
+<li><code>git commit</code>: Create a snapshot of the current changes.</li>
+<li><code>git checkout &lt;hash&gt; &lt;file&gt;</code>: Set <code>&lt;file&gt;</code> to be in the same state as it was
+  in the commit corresponding to <code>&lt;hash&gt;</code>. Note that <code>HEAD</code> is shorthand for the
+  last commit.</li>
+<li><code>git branch</code>: List all branches.</li>
+<li><code>git branch &lt;branch-name&gt;</code>: Create a new branch called <code>&lt;branch-name&gt;</code>.</li>
+<li><code>git checkout &lt;branch-name&gt;</code>: Move to <code>&lt;branch-name&gt;</code>.</li>
+<li><code>git merge &lt;branch-name&gt;</code>: Merge <code>&lt;branch-name&gt;</code> in to the current branch.</li>
+<li><code>git diff</code>: Show the differences between the current state of the repository
+  and the last commit.</li>
+</ul>
+<h2>Tip</h2>
+<ul>
+<li><code>git</code> keep track of things on a line by line basis. Thus changing any given
+  character in any given line corresponds to changing the whole line. In the
+  interest of keeping commits meaningful (thus helpful) it is useful to
+  regularly line return in LaTeX documents otherwise changing various words in a
+  paragraph can correspond to the same overall change.</li>
+<li>There are a number of excellent helpful tools for interfacing with <code>git</code>. It
+  is recommended to start by learning these basic commands directly so that you
+  understand what is going on in the background before making use of the helpful
+  tools.</li>
+</ul>
 
       </div>
   </div>
