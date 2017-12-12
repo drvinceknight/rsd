@@ -105,22 +105,33 @@ travels with that repository.</p>
 <a href="https://github.com/drvinceknight/rsd">github.com/drvinceknight/rsd</a>.</p>
 <p>Let us start by creating your own copy of that repository.</p>
 <p>After signing in to github, click on <code>Fork</code> button.</p>
-<p><strong>TODO Include screen shot.</strong></p>
+<p><img alt="" src="/rsd/assets/img/forking-screenshot.png" /></p>
 <p>This then creates a copy of the repository under your account.</p>
-<p><strong>TODO Include screen shot.</strong></p>
+<p><img alt="" src="/rsd/assets/img/copied-repo-screenshot.png" /></p>
 <h2>Cloning a repository</h2>
 <p>Now let us clone this repository locally: so that you will have your own copy of
 it.</p>
 <p>Click on <code>Clone or Download</code> and copy the https address of this repository:</p>
-<p><strong>TODO Include screen shot</strong></p>
+<p><img alt="" src="/rsd/assets/img/clone-repo-screenshot.png" /></p>
 <p>Exit any previous directories and open your command line and type:</p>
 <pre><code class="bash">git clone &lt;copied-address&gt;
+</code></pre>
+
+<p>You should see something like this:</p>
+<pre><code class="bash">git clone https://github.com/&lt;github-username&gt;/rsd.git
+Cloning into 'rsd'...
+remote: Counting objects: 222, done.
+remote: Compressing objects: 100% (105/105), done.
+remote: Total 222 (delta 64), reused 107 (delta 32), pack-reused 67
+Receiving objects: 100% (222/222), 202.14 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (84/84), done.
+Checking connectivity... done.
 </code></pre>
 
 <p>This creates a copy of all the source files for the course. You're welcome to
 look around and see the source files. Note that you can also type <code>git log</code> to
 see the entire history of how the course was written.</p>
-<h2>Creating a pull request</h2>
+<h2>Making changes</h2>
 <p>If you go to <a href="/rsd/participants/">participants list</a> you can see a list of
 everyone who has participated in this course. You are now going to add yourself
 to that list.</p>
@@ -154,7 +165,7 @@ website, someone with control over the course website needs to be merge the
 changes in.</p>
 <p>So you now need to "request" that that merge happens. Github offers the
 capability to do this using what is called a "Pull request" (PR)</p>
-<h2>Making a PR</h2>
+<h2>Making a Pull Request</h2>
 <p>First we need to send the changes from your computer back to your remote copy.</p>
 <p>Let us see what git knows about the remote:</p>
 <pre><code class="bash">git remote -v
@@ -174,9 +185,9 @@ actual address you see might be different).</p>
 
 <p>After running that command and authenticating your changes will be on your own
 branch:</p>
-<p><strong>TODO</strong> Include screenshot</p>
-<p>Now you are ready to request that changes be merged.</p>
-<p><strong>TODO</strong> Include instructions and screenshot of opening a PR.</p>
+<p><img alt="" src="/rsd/assets/img/open-pr-screenshot.png" /></p>
+<p>Now you are ready to request that changes be merged.  To do this, click on the
+"Compare and pull request" button and then write a message.</p>
 <p>When opening a PR you might notice that github will attempt to use the commit
 messages to enter the text in the PR message. This can be helpful but no matter
 what before clicking the "Open a PR" button try to ensure that you message
@@ -185,13 +196,15 @@ follows these principles:</p>
 <li>Include the purpose of the PR: <code>this change to the code base will...</code></li>
 <li>Ask for specific feedback: <code>I attempted to do ... but would appreciate
   specific feedback on that...</code></li>
-<li>Be polite and courteous: most open source projects are maintained by people who
-  are very busy.</li>
+<li>Be polite and courteous: the person reviewing might be busy.</li>
 </ul>
+<p>Now you are ready to create your first pull request:
+do this by clicking on "Create a pull request".</p>
+<p><img alt="" src="/rsd/assets/img/create-pr-screenshot.png" /></p>
 <h2>Reviewing a PR</h2>
 <p>Once you have opened your PR it will be reviewed. The review might ask for some
 changes:</p>
-<p><strong>TODO</strong> Screenshot asking for a change</p>
+<p><img alt="" src="/rsd/assets/img/review-process-screenshot.png" /></p>
 <p>If that's the case, make the changes locally, on the same branch. Stage and
 commit the changes. Then push them back to the same remote branch. This will
 automatically update the PR.</p>
@@ -214,6 +227,8 @@ will in the last part of this workshop) keep the following principles in mind:</
   don't like your function".</li>
 <li>Be polite and courteous: because life is short.</li>
 </ul>
+<p><strong>It is important to remember that if done well, a review of a PR should be a
+conversation.</strong></p>
 
       </div>
   </div>

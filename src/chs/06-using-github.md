@@ -23,11 +23,11 @@ Let us start by creating your own copy of that repository.
 
 After signing in to github, click on `Fork` button.
 
-**TODO Include screen shot.**
+![]({{root}}/assets/img/forking-screenshot.png)
 
 This then creates a copy of the repository under your account.
 
-**TODO Include screen shot.**
+![]({{root}}/assets/img/copied-repo-screenshot.png)
 
 ## Cloning a repository
 
@@ -36,7 +36,7 @@ it.
 
 Click on `Clone or Download` and copy the https address of this repository:
 
-**TODO Include screen shot**
+![]({{root}}/assets/img/clone-repo-screenshot.png)
 
 Exit any previous directories and open your command line and type:
 
@@ -44,11 +44,24 @@ Exit any previous directories and open your command line and type:
 git clone <copied-address>
 ```
 
+You should see something like this:
+
+```bash
+git clone https://github.com/<github-username>/rsd.git
+Cloning into 'rsd'...
+remote: Counting objects: 222, done.
+remote: Compressing objects: 100% (105/105), done.
+remote: Total 222 (delta 64), reused 107 (delta 32), pack-reused 67
+Receiving objects: 100% (222/222), 202.14 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (84/84), done.
+Checking connectivity... done.
+```
+
 This creates a copy of all the source files for the course. You're welcome to
 look around and see the source files. Note that you can also type `git log` to
 see the entire history of how the course was written.
 
-## Creating a pull request
+## Making changes
 
 If you go to [participants list]({{root}}/participants/) you can see a list of
 everyone who has participated in this course. You are now going to add yourself
@@ -95,7 +108,7 @@ changes in.
 So you now need to "request" that that merge happens. Github offers the
 capability to do this using what is called a "Pull request" (PR)
 
-## Making a PR
+## Making a Pull Request
 
 First we need to send the changes from your computer back to your remote copy.
 
@@ -126,11 +139,10 @@ git push origin add-<my-name>-to-participant-list
 After running that command and authenticating your changes will be on your own
 branch:
 
-**TODO** Include screenshot
+![]({{root}}/assets/img/open-pr-screenshot.png)
 
-Now you are ready to request that changes be merged.
-
-**TODO** Include instructions and screenshot of opening a PR.
+Now you are ready to request that changes be merged.  To do this, click on the
+"Compare and pull request" button and then write a message.
 
 When opening a PR you might notice that github will attempt to use the commit
 messages to enter the text in the PR message. This can be helpful but no matter
@@ -140,15 +152,19 @@ follows these principles:
 - Include the purpose of the PR: `this change to the code base will...`
 - Ask for specific feedback: `I attempted to do ... but would appreciate
   specific feedback on that...`
-- Be polite and courteous: most open source projects are maintained by people who
-  are very busy.
+- Be polite and courteous: the person reviewing might be busy.
+
+Now you are ready to create your first pull request:
+do this by clicking on "Create a pull request".
+
+![]({{root}}/assets/img/create-pr-screenshot.png)
 
 ## Reviewing a PR
 
 Once you have opened your PR it will be reviewed. The review might ask for some
 changes:
 
-**TODO** Screenshot asking for a change
+![]({{root}}/assets/img/review-process-screenshot.png)
 
 If that's the case, make the changes locally, on the same branch. Stage and
 commit the changes. Then push them back to the same remote branch. This will
@@ -172,3 +188,6 @@ will in the last part of this workshop) keep the following principles in mind:
 - Be positive: use "let us change this function to do this" as opposed to "I
   don't like your function".
 - Be polite and courteous: because life is short.
+
+**It is important to remember that if done well, a review of a PR should be a
+conversation.**
