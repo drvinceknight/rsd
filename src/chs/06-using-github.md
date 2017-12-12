@@ -140,8 +140,7 @@ follows these principles:
 - Include the purpose of the PR: `this change to the code base will...`
 - Ask for specific feedback: `I attempted to do ... but would appreciate
   specific feedback on that...`
-- Be polite and courteous: most open source projects are maintained by people who
-  are very busy.
+- Be polite and courteous: the person reviewing might be busy.
 
 ## Reviewing a PR
 
