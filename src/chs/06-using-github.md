@@ -171,3 +171,6 @@ will in the last part of this workshop) keep the following principles in mind:
 - Be positive: use "let us change this function to do this" as opposed to "I
   don't like your function".
 - Be polite and courteous: because life is short.
+
+**It is important to remember that if done well, a review of a PR should be a
+conversation.**
