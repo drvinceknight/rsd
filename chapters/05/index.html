@@ -90,28 +90,14 @@ div.output_prompt {
       <div class="home">
         
     <h1>Version control</h1>
-<p>When carrying out research it can be beneficial to be able to keep a log of
-the various steps along the way of in a project.</p>
-<p>One approach to do this is to save files with meaningful names, for example in
-<a href="../03/">Chapter 03</a> we used <code>...v1.py</code>, <code>...v2.py</code>, <code>...v3.py</code> to mark the
-progression of the file. This approach can lead to human error and also might
-miss some things.</p>
-<p>Another potential area for error is when collaborating with others. When working
-on a paper it is possible that two individuals work in parallel. At some point
-their parallel work must be recombined: this can be done manually (copying the
-work of one in to the work of the other) however, this again can lead to errors.</p>
-<p>This is where software helps: automated version control hands all this things
-over to software.</p>
-<p>The particular version control tool we will use is call <code>git</code>.</p>
-<p><code>git</code>, takes an initial look at all the files in your directory (we will start
-calling this a <strong>repository</strong>) and then keeps track of changes you tell it to.</p>
-<p>This can then be used to:</p>
+<p>When carrying out research it can be beneficial to be able to:</p>
 <ul>
 <li>examine the entire history of the project.</li>
-<li>rewind and retrieve a file from the past (this implies there is no longer any
-  need to use <code>...v1.py</code>, <code>...v2.py</code>, <code>...v3.py</code>).</li>
+<li>rewind and retrieve a file from the past.</li>
 <li>combine changes from two different parallel pieces of work.</li>
 </ul>
+<p>The potential for human error when doing these things can be handled by
+software. The particular tool we will use is `git.</p>
 <h2>Setting up git</h2>
 <p>Before we get started there are a couple of things we need to do to set up
 <code>git</code>. Recall that <code>git</code> keeps track of the entire history of a project, this
@@ -674,9 +660,9 @@ modify the file and commit it to complete the merge.</p>
 <li><code>git diff</code>: Show the differences between the current state of the repository
   and the last commit.</li>
 </ul>
-<h2>Tip</h2>
+<h1>Tip</h1>
 <ul>
-<li><code>git</code> keep track of things on a line by line basis. Thus changing any given
+<li><code>git</code> keeps track of things on a line by line basis. Thus changing any given
   character in any given line corresponds to changing the whole line. In the
   interest of keeping commits meaningful (thus helpful) it is useful to
   regularly line return in LaTeX documents otherwise changing various words in a

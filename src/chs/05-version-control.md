@@ -1,32 +1,13 @@
 # Version control
 
-When carrying out research it can be beneficial to be able to keep a log of
-the various steps along the way of in a project.
-
-One approach to do this is to save files with meaningful names, for example in
-[Chapter 03](../03/) we used `...v1.py`, `...v2.py`, `...v3.py` to mark the
-progression of the file. This approach can lead to human error and also might
-miss some things.
-
-Another potential area for error is when collaborating with others. When working
-on a paper it is possible that two individuals work in parallel. At some point
-their parallel work must be recombined: this can be done manually (copying the
-work of one in to the work of the other) however, this again can lead to errors.
-
-This is where software helps: automated version control hands all this things
-over to software.
-
-The particular version control tool we will use is call `git`.
-
-`git`, takes an initial look at all the files in your directory (we will start
-calling this a **repository**) and then keeps track of changes you tell it to.
-
-This can then be used to:
+When carrying out research it can be beneficial to be able to:
 
 - examine the entire history of the project.
-- rewind and retrieve a file from the past (this implies there is no longer any
-  need to use `...v1.py`, `...v2.py`, `...v3.py`).
+- rewind and retrieve a file from the past.
 - combine changes from two different parallel pieces of work.
+
+The potential for human error when doing these things can be handled by
+software. The particular tool we will use is `git.
 
 ## Setting up git
 
@@ -740,9 +721,9 @@ Here are the commands we have seen in this chapter:
 - `git diff`: Show the differences between the current state of the repository
   and the last commit.
 
-## Tip
+# Tip
 
-- `git` keep track of things on a line by line basis. Thus changing any given
+- `git` keeps track of things on a line by line basis. Thus changing any given
   character in any given line corresponds to changing the whole line. In the
   interest of keeping commits meaningful (thus helpful) it is useful to
   regularly line return in LaTeX documents otherwise changing various words in a
