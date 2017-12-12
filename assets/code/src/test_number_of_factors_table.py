@@ -6,12 +6,12 @@ import os.path
 
 import pandas as pd
 
-import find_primes
+import prime_factors
 
 expected_out = b'[(2, 3), (11, 1), (23, 1)]\n[(7, 1)]\n'
 cwd = "./assets/code/"  # TODO This means it can only be run from root dir
 
-counts = [len(find_primes.obtain_prime_factorisation(n)) for n in range(95, 101)]
+counts = [len(prime_factors.get(n)) for n in range(95, 101)]
 df = pd.DataFrame({"N": range(95, 101), "Number of factors": counts})
 expected_table = df.to_latex(index=False)
 

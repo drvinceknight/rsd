@@ -2,7 +2,7 @@
 Function to check if a number is prime.
 """
 
-def is_prime(N):
+def check(N):
     """
     Test if N is prime.
 
