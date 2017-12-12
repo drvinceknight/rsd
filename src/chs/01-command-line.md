@@ -49,11 +49,6 @@ This stands for "present working directory"
 It should list where you are currently located in your
 command line interface.
 
-Here it is on a Nix machine showing that we're current in the `/home/vince/`
-directory.
-
-![]({{root}}/assets/img/pwd.png)
-
 ## Step 3: Seeing what is in your current location
 
 To view the contents of the current directory:
