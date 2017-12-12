@@ -721,9 +721,9 @@ Here are the commands we have seen in this chapter:
 - `git diff`: Show the differences between the current state of the repository
   and the last commit.
 
-## Tip
+# Tip
 
-- `git` keep track of things on a line by line basis. Thus changing any given
+- `git` keeps track of things on a line by line basis. Thus changing any given
   character in any given line corresponds to changing the whole line. In the
   interest of keeping commits meaningful (thus helpful) it is useful to
   regularly line return in LaTeX documents otherwise changing various words in a
