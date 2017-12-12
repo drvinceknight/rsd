@@ -185,7 +185,17 @@ print(count_even_numbers(42))
 
 ```
 
-**Exercise**
+# Tip
+
+Explore your editor: both Atom and VS Code offer many plugins for Python. This
+is not just a luxury to make things easier but **also** helps avoid mistakes by
+letting the plugins check various things for you.
+
+This is not just the case for these editors and Python. Most good editors have a
+full ecosystem of tools available to support the writing of code in many
+languages.
+
+# Exercise
 
 Write some code to compute and compare both sides of the following equation, for
 varying values of $N$.
