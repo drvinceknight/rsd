@@ -21,12 +21,6 @@ following link:
 - Windows: [https://miktex.org](https://miktex.org)
 - Mac OS: [https://tug.org/mactex/](https://tug.org/mactex/)
 
-## Slack
-
-We will use Slack to potentially share small snippets of code as well as
-communicate after the end of the workshop. Please download it here:
-[https://slack.com](https://slack.com).
-
 ## Git
 
 Git is the version control software we will use in this course. Go to the
@@ -42,6 +36,14 @@ Atom is a text editor (one of the two you will try during this workshop):
 
 VS code is a text editor (one of the two you will try during this workshop):
 [https://code.visualstudio.com](https://code.visualstudio.com).
+
+## Slack
+
+We will use Slack to potentially share small snippets of code as well as
+communicate after the end of the workshop. Prior to this course you should have
+been sent an invitation to join the slack room. You can use slack via a
+web browser but you can also download a local application (see the slack site
+for information: [https://slack.com](https://slack.com).
 
 ## Github
 
