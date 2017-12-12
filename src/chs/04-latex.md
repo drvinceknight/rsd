@@ -161,7 +161,7 @@ At times, a computer algebra system might be used to manipulate an expression,
 in this case it could be worth outputting the output directly to file and
 reading it in. (Again, avoiding the opportunity for human error).
 
-Let us write a python script to generate the series expansion for the first 3
+Let us write a python script to generate the series expansion for the first few
 terms of the lower bound of the number of primes less than $n$:
 
 $$
