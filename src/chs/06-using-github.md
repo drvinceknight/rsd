@@ -23,11 +23,11 @@ Let us start by creating your own copy of that repository.
 
 After signing in to github, click on `Fork` button.
 
-**TODO Include screen shot.**
+![]({{root}}/assets/img/forking-screenshot.png)
 
 This then creates a copy of the repository under your account.
 
-**TODO Include screen shot.**
+![]({{root}}/assets/img/copied-repo-screenshot.png)
 
 ## Cloning a repository
 
@@ -36,7 +36,7 @@ it.
 
 Click on `Clone or Download` and copy the https address of this repository:
 
-**TODO Include screen shot**
+![]({{root}}/assets/img/clone-repo-screenshot.png)
 
 Exit any previous directories and open your command line and type:
 
@@ -139,11 +139,10 @@ git push origin add-<my-name>-to-participant-list
 After running that command and authenticating your changes will be on your own
 branch:
 
-**TODO** Include screenshot
+![]({{root}}/assets/img/open-pr-screenshot.png)
 
-Now you are ready to request that changes be merged.
-
-**TODO** Include instructions and screenshot of opening a PR.
+Now you are ready to request that changes be merged.  To do this, click on the
+"Compare and pull request" button and then write a message.
 
 When opening a PR you might notice that github will attempt to use the commit
 messages to enter the text in the PR message. This can be helpful but no matter
@@ -155,12 +154,17 @@ follows these principles:
   specific feedback on that...`
 - Be polite and courteous: the person reviewing might be busy.
 
+Now you are ready to create your first pull request:
+do this by clicking on "Create a pull request".
+
+![]({{root}}/assets/img/create-pr-screenshot.png)
+
 ## Reviewing a PR
 
 Once you have opened your PR it will be reviewed. The review might ask for some
 changes:
 
-**TODO** Screenshot asking for a change
+![]({{root}}/assets/img/review-process-screenshot.png)
 
 If that's the case, make the changes locally, on the same branch. Stage and
 commit the changes. Then push them back to the same remote branch. This will
