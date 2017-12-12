@@ -104,13 +104,13 @@ Let us investigate the number of prime factors of integers.
 Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
 factors for each integer less than 100.
 
-\begin{center}
-    \begin{figure}[!hbtp]
+\begin{figure}[!hbtp]
+    \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
         \label{scatter_plot_of_prime_factors}
-    \end{figure}
-\end{center}
+    \end{center}
+\end{figure}
 ```
 
 **Note** when we do this we need to include `\include{graphicx}` in the preamble
@@ -143,13 +143,13 @@ Let us investigate the number of prime factors of integers.
 Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
 factors for each integer less than 100.
 
-\begin{center}
-    \begin{figure}[!hbtp]
+\begin{figure}[!hbtp]
+    \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
         \label{scatter_plot_of_prime_factors}
-    \end{figure}
-\end{center}
+    \end{center}
+\end{figure}
 
 The number with the most prime factors
 has\input{tex/largest_number_of_factors} prime factors.
@@ -184,13 +184,13 @@ Let us investigate the number of prime factors of integers.
 Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
 factors for each integer less than 100.
 
-\begin{center}
-    \begin{figure}[!hbtp]
+\begin{figure}[!hbtp]
+    \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
         \label{scatter_plot_of_prime_factors}
-    \end{figure}
-\end{center}
+    \end{center}
+\end{figure}
 
 The number with the most prime factors
 has \input{tex/largest_number_of_factors}prime factors.
@@ -228,22 +228,22 @@ Let us investigate the number of prime factors of integers.
 Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
 factors for each integer less than 100.
 
-\begin{center}
-    \begin{figure}[!hbtp]
+\begin{figure}[!hbtp]
+    \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
         \label{scatter_plot_of_prime_factors}
-    \end{figure}
-\end{center}
+    \end{center}
+\end{figure}
 
 Table~\ref{tab:number_of_factors_table} shows these counts for \(95\leq
 n\leq 100\).
 
-\begin{center}
-    \begin{table}[!hbtp]
+\begin{table}[!hbtp]
+    \begin{center}
         \input{tex/number_of_factors_table.tex}
-    \end{table}
-\end{center}
+    \end{center}
+\end{table}
 
 The number with the most prime factors
 has\input{tex/largest_number_of_factors} prime factors.
