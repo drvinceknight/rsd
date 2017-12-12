@@ -8,60 +8,21 @@ In this chapter we will consider a number of pillars of software development:
 
 We will do this by writing software to find the prime factors of an integer.
 
-## Basic scripting
+## Discussion
 
-Consider the file [`find_primes.py`]({{root}}/assets/code/src/find_primes_v1.py).
+Before looking any further there will be a class discussion.
 
-Is it clear what this function is doing?
+## Files from discussion
 
-## Comments
-
-Consider the file [`find_primes.py`]({{root}}/assets/code/src/find_primes_v2.py).
-
-Is this better?
-
-Do all the comments explain what is happening?
-
-## Better variable names
-
-Consider the file [`find_primes.py`]({{root}}/assets/code/src/find_primes_v3.py).
-
-Using verbose/explicit variable names improves the code readability.
-
-Note that now, some comments become useless: in fact some become "lies". Best
-practice is to in fact comment code only when absolutely necessary and instead
-rely on so called "self documented code".
-
-## Modularity
-
-Consider the 3 files:
-
+- [`find_primes_v1.py`]({{root}}/assets/code/src/find_primes_v1.py).
+- [`find_primes_v2.py`]({{root}}/assets/code/src/find_primes_v2.py).
+- [`find_primes_v3.py`]({{root}}/assets/code/src/find_primes_v3.py).
 - [`is_prime.py`]({{root}}/assets/code/src/is_prime.py)
-- [`repeat_divide.py`]({{root}}/assets/code/src/repeat_divide.py)
-- [`find_primes.py`]({{root}}/assets/code/src/find_primes.py)
-
-Note here that we have broken each step of the algorithm in to it's own script
-and further more we have documented each function using a specific documentation
-as opposed to comments.
-
-By breaking code in to little parts and clearly documenting (both through the
-name of the function and appropriate use of comments) it becomes clearer what
-each step does and also ensures that comments do not become lies.
-
-## Testing
-
-Open the 3 files:
-
+- [`integer_division`]({{root}}/assets/code/src/integer_division.py)
+- [`prime_factors.py`]({{root}}/assets/code/src/prime_factors.py)
 - [`test_is_prime.py`]({{root}}/assets/code/src/test_is_prime.py)
-- [`test_repeat_divide.py`]({{root}}/assets/code/src/test_repeat_divide.py)
-- [`test_find_primes.py`]({{root}}/assets/code/src/test_find_primes.py)
-
-These files include code to ensure that our code does what it is expected to do.
-
-In `test_is_prime.py` we see using a simple `if` statement that would check if
-if the code is incorrect but from then on we use a Python statement called
-`assert` which does this in a simpler way. Most languages have something
-similar.
+- [`test_integer_division.py`]({{root}}/assets/code/src/test_integer_division.py)
+- [`test_prime_factors.py`]({{root}}/assets/code/src/test_prime_factors.py)
 
 ## Code convention
 
@@ -101,7 +62,7 @@ There are three aspects to writing good software:
 - Documentation: document your code. Do this by choosing verbose and meaningful
   variable and function names but also by writing a "manual" for each part of
   your code.
-- Testing: write a test for your code. This ensures that you know your code does
+- Testing: write tests for your code. This ensures that you know your code does
   what it's supposed to do. It will also prove invaluable when it comes to
   debugging as you can immediately find out which part of your code doesn't
   work.
