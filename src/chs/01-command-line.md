@@ -200,4 +200,7 @@ use these later on in the course.
 Most command line tools allow for command tab completion. This means you can
 start typing the first few letters of a file or a directory and press tab which
 will complete the rest. This is a very useful tool to ensure you don't make
-mistakes when typing. Try it!
+mistakes when typing.
+
+You can also use the up/down arrow keys to cycle through your previous commands.
+This also helps avoid repetitive typing.
