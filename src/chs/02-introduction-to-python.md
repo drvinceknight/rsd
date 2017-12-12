@@ -33,7 +33,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 The `>>>` indicates point at which you can type python code.
 
-Try the following (you can see the expected output):
+Type `2 + 2` and press enter. You can see what this looks like below:
 
 ```python
 >>> 2 + 2
@@ -131,15 +131,12 @@ We can use boolean variables to create logical statements.
 Write a file called `02-if-statements.py`, include the following code and run
 it.
 
-**Ignore the `>>>`, `...` and the output, this is here for testing purposes.**
-
 ```python
->>> N = 572
->>> if N % 2 == 0:
-...     print("N is even")
-... else:
-...     print("N is odd")
-N is even
+N = 572
+if N % 2 == 0:
+    print("N is even")
+else:
+    print("N is odd")
 
 ```
 
@@ -156,14 +153,13 @@ Write a file called `03-while-loops.py`, include the following code and run
 it.
 
 ```python
->>> N = 0
->>> even_number_count = 0
->>> while N < 10:
-...     if N % 2 == 0:
-...         even_number_count = even_number_count + 1
-...     N = N + 1
->>> print(even_number_count)
-5
+N = 0
+even_number_count = 0
+while N < 10:
+    if N % 2 == 0:
+        even_number_count = even_number_count + 1
+    N = N + 1
+print(even_number_count)
 
 ```
 
@@ -175,22 +171,31 @@ modular code.
 Write a file called `04-functions.py`, include the following code and run it.
 
 ```python
->>> def count_even_numbers(upper_limit):
-...     N = 0
-...     even_number_count = 0
-...     while N < upper_limit:
-...         if N % 2 == 0:
-...             even_number_count = even_number_count + 1
-...         N = N + 1
-...     return even_number_count
->>> print(count_even_numbers(10))
-5
->>> print(count_even_numbers(42))
-21
+def count_even_numbers(upper_limit):
+    N = 0
+    even_number_count = 0
+    while N < upper_limit:
+        if N % 2 == 0:
+            even_number_count = even_number_count + 1
+        N = N + 1
+    return even_number_count
+print(count_even_numbers(10))
+print(count_even_numbers(42))
+
 
 ```
 
-**Exercise**
+# Tip
+
+Explore your editor: both Atom and VS Code offer many plugins for Python. This
+is not just a luxury to make things easier but **also** helps avoid mistakes by
+letting the plugins check various things for you.
+
+This is not just the case for these editors and Python. Most good editors have a
+full ecosystem of tools available to support the writing of code in many
+languages.
+
+# Exercise
 
 Write some code to compute and compare both sides of the following equation, for
 varying values of $N$.

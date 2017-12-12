@@ -115,7 +115,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 </code></pre>
 
 <p>The <code>&gt;&gt;&gt;</code> indicates point at which you can type python code.</p>
-<p>Try the following (you can see the expected output):</p>
+<p>Type <code>2 + 2</code> and press enter. You can see what this looks like below:</p>
 <pre><code class="python">&gt;&gt;&gt; 2 + 2
 4
 
@@ -190,13 +190,11 @@ enjoy and customise it to work for you.</p>
 <p>We can use boolean variables to create logical statements.</p>
 <p>Write a file called <code>02-if-statements.py</code>, include the following code and run
 it.</p>
-<p><strong>Ignore the <code>&gt;&gt;&gt;</code>, <code>...</code> and the output, this is here for testing purposes.</strong></p>
-<pre><code class="python">&gt;&gt;&gt; N = 572
-&gt;&gt;&gt; if N % 2 == 0:
-...     print(&quot;N is even&quot;)
-... else:
-...     print(&quot;N is odd&quot;)
-N is even
+<pre><code class="python">N = 572
+if N % 2 == 0:
+    print(&quot;N is even&quot;)
+else:
+    print(&quot;N is odd&quot;)
 
 </code></pre>
 
@@ -208,14 +206,13 @@ block indicate what code to execute if the boolean variable <code>N % 2 == 0</co
 boolean variable.</p>
 <p>Write a file called <code>03-while-loops.py</code>, include the following code and run
 it.</p>
-<pre><code class="python">&gt;&gt;&gt; N = 0
-&gt;&gt;&gt; even_number_count = 0
-&gt;&gt;&gt; while N &lt; 10:
-...     if N % 2 == 0:
-...         even_number_count = even_number_count + 1
-...     N = N + 1
-&gt;&gt;&gt; print(even_number_count)
-5
+<pre><code class="python">N = 0
+even_number_count = 0
+while N &lt; 10:
+    if N % 2 == 0:
+        even_number_count = even_number_count + 1
+    N = N + 1
+print(even_number_count)
 
 </code></pre>
 
@@ -223,22 +220,28 @@ it.</p>
 <p>It is possible to create functions in python which we will use later to write
 modular code.</p>
 <p>Write a file called <code>04-functions.py</code>, include the following code and run it.</p>
-<pre><code class="python">&gt;&gt;&gt; def count_even_numbers(upper_limit):
-...     N = 0
-...     even_number_count = 0
-...     while N &lt; upper_limit:
-...         if N % 2 == 0:
-...             even_number_count = even_number_count + 1
-...         N = N + 1
-...     return even_number_count
-&gt;&gt;&gt; print(count_even_numbers(10))
-5
-&gt;&gt;&gt; print(count_even_numbers(42))
-21
+<pre><code class="python">def count_even_numbers(upper_limit):
+    N = 0
+    even_number_count = 0
+    while N &lt; upper_limit:
+        if N % 2 == 0:
+            even_number_count = even_number_count + 1
+        N = N + 1
+    return even_number_count
+print(count_even_numbers(10))
+print(count_even_numbers(42))
+
 
 </code></pre>
 
-<p><strong>Exercise</strong></p>
+<h1>Tip</h1>
+<p>Explore your editor: both Atom and VS Code offer many plugins for Python. This
+is not just a luxury to make things easier but <strong>also</strong> helps avoid mistakes by
+letting the plugins check various things for you.</p>
+<p>This is not just the case for these editors and Python. Most good editors have a
+full ecosystem of tools available to support the writing of code in many
+languages.</p>
+<h1>Exercise</h1>
 <p>Write some code to compute and compare both sides of the following equation, for
 varying values of $N$.</p>
 <p>$$
