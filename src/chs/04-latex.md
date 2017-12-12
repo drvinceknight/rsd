@@ -24,7 +24,7 @@ command:
 pdflatex main.tex
 ```
 
-This will create a pdf file `main.pdf`.
+This will create a pdf file `main.pdf` (and a number of auxiliary files).
 
 ## Calling one document from another
 
