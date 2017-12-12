@@ -49,11 +49,6 @@ This stands for "present working directory"
 It should list where you are currently located in your
 command line interface.
 
-Here it is on a Nix machine showing that we're current in the `/home/vince/`
-directory.
-
-![]({{root}}/assets/img/pwd.png)
-
 ## Step 3: Seeing what is in your current location
 
 To view the contents of the current directory:
@@ -82,7 +77,38 @@ directory.
 
 Open your current directory in a graphical user interface and compare.
 
-## Step 4: Moving to another location
+## Step 4: Creating a directory
+
+To create a directory:
+
+```bash
+mkdir <directory_name>
+```
+
+Experiment with creating a directory for this workshop:
+
+```bash
+mkdir rsd-workshop
+```
+
+If your directory structure looked like this:
+
+```bash
+|--- home/
+     |--- research
+     |--- photos
+```
+
+It will now look something like:
+
+```bash
+|--- home/
+     |--- research
+     |--- photos
+     |--- rsd-workshop
+```
+
+## Step 5: Moving to another location
 
 On both Windows and nix if you want to enter a directory that is in your current
 diractory type:
@@ -91,25 +117,25 @@ diractory type:
 cd <directory>
 ```
 
-For example if your directory structure looked like this:
+To move in to the `rsd-workshop` directory we created previously:
 
 ```bash
-|--- home/
-     |--- research
-          |--- thesis.tex
-          |--- data/
-               |--- all_primes.csv
+cd rsd-workshop
 ```
 
-If you were currently in the `research` directory and wanted to move in to the
-`data` directory you would type:
+As an exercise, move in to that directory and create two further directories:
 
-```bash
-cd data
+```
+|--- rsd-workshop
+     |--- tex
+     |--- src
+
 ```
 
-If you now wanted to go back to the "parent" directory (in this case `research`
-you would type:
+These two directories stand for LaTeX (`tex`) and source code (`src`): we will
+use these later on in the course.
+
+If you now wanted to go back to the "parent" directory:
 
 ```bash
 cd ..
@@ -120,7 +146,7 @@ Where `..` is short hand for a previous directory.
 Experiment with these, in combination with the command to find your current
 location as well as the command to list the contents of your directory.
 
-## Step 5: Copying files
+## Step 6: Copying files
 
 To copy a file:
 
@@ -136,7 +162,7 @@ copy <file> <new_file_directory_and_name>
 cp <file> <new_file_directory_and_name>
 ```
 
-## Step 6: Moving/renaming files
+## Step 7: Moving/renaming files
 
 To move a file:
 
@@ -158,14 +184,14 @@ in the same directory.
 **WARNING** When using the command line interface you will not be prompted for
 confirmation if `move`/`mv` were to overwrite another file. Be careful.
 
-## Step 7: Deleting files
+## Step 8: Deleting files
 
 To delete a file:
 
 **Windows**
 
 ```bash
-del <file> 
+del <file>
 ```
 
 **nix**
@@ -174,35 +200,12 @@ del <file>
 rm <file>
 ```
 
-## Step 8: Creating a directory
-
-To create a directory:
-
-```bash
-mkdir <directory_name>
-```
-
-Experiment with creating a directory for this workshop:
-
-```bash
-mkdir rsd-workshop
-```
-
-As an exercise, move in to that directory and create two further directories:
-
-```
-|--- rsd
-     |--- tex
-     |--- src
-
-```
-
-These two directories stand for LaTeX (`tex`) and source code (`src`): we will
-use these later on in the course.
-
 # Tip: Tab completion
 
 Most command line tools allow for command tab completion. This means you can
 start typing the first few letters of a file or a directory and press tab which
 will complete the rest. This is a very useful tool to ensure you don't make
-mistakes when typing. Try it!
+mistakes when typing.
+
+You can also use the up/down arrow keys to cycle through your previous commands.
+This also helps avoid repetitive typing.
