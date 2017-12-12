@@ -1,7 +1,7 @@
 import is_prime
-import repeat_divide
+import integer_division
 
-def obtain_prime_factorisation(N):
+def get(N):
     """
     Return the prime factorisation of a number.
 
@@ -18,14 +18,15 @@ def obtain_prime_factorisation(N):
     while N > 1:
         potential_factor += 1
 
-        if is_prime.is_prime(potential_factor):
+        if is_prime.check(potential_factor):
 
-            N, exponent = repeat_divide.repeat_divide_number(N, potential_factor)
+            exponent = integer_division.get_exponent_of_factor(N, potential_factor)
+            N = (N / (potential_factor ** exponent))
 
             if exponent > 0:
                 factors.append((potential_factor, exponent))
 
     return factors
 
-print(obtain_prime_factorisation(2 ** 3 * 11 * 23))
-print(obtain_prime_factorisation(7))
+print(get(2 ** 3 * 11 * 23))
+print(get(7))

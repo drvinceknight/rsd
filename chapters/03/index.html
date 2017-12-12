@@ -97,44 +97,20 @@ div.output_prompt {
 <li>Automated testing.</li>
 </ol>
 <p>We will do this by writing software to find the prime factors of an integer.</p>
-<h2>Basic scripting</h2>
-<p>Consider the file <a href="/rsd/assets/code/src/find_primes_v1.py"><code>find_primes.py</code></a>.</p>
-<p>Is it clear what this function is doing?</p>
-<h2>Comments</h2>
-<p>Consider the file <a href="/rsd/assets/code/src/find_primes_v2.py"><code>find_primes.py</code></a>.</p>
-<p>Is this better?</p>
-<p>Do all the comments explain what is happening?</p>
-<h2>Better variable names</h2>
-<p>Consider the file <a href="/rsd/assets/code/src/find_primes_v3.py"><code>find_primes.py</code></a>.</p>
-<p>Using verbose/explicit variable names improves the code readability.</p>
-<p>Note that now, some comments become useless: in fact some become "lies". Best
-practice is to in fact comment code only when absolutely necessary and instead
-rely on so called "self documented code".</p>
-<h2>Modularity</h2>
-<p>Consider the 3 files:</p>
+<h2>Discussion</h2>
+<p>Before looking any further there will be a class discussion.</p>
+<h2>Files from discussion</h2>
 <ul>
+<li><a href="/rsd/assets/code/src/find_primes_v1.py"><code>find_primes_v1.py</code></a>.</li>
+<li><a href="/rsd/assets/code/src/find_primes_v2.py"><code>find_primes_v2.py</code></a>.</li>
+<li><a href="/rsd/assets/code/src/find_primes_v3.py"><code>find_primes_v3.py</code></a>.</li>
 <li><a href="/rsd/assets/code/src/is_prime.py"><code>is_prime.py</code></a></li>
-<li><a href="/rsd/assets/code/src/repeat_divide.py"><code>repeat_divide.py</code></a></li>
-<li><a href="/rsd/assets/code/src/find_primes.py"><code>find_primes.py</code></a></li>
-</ul>
-<p>Note here that we have broken each step of the algorithm in to it's own script
-and further more we have documented each function using a specific documentation
-as opposed to comments.</p>
-<p>By breaking code in to little parts and clearly documenting (both through the
-name of the function and appropriate use of comments) it becomes clearer what
-each step does and also ensures that comments do not become lies.</p>
-<h2>Testing</h2>
-<p>Open the 3 files:</p>
-<ul>
+<li><a href="/rsd/assets/code/src/integer_division.py"><code>integer_division</code></a></li>
+<li><a href="/rsd/assets/code/src/prime_factors.py"><code>prime_factors.py</code></a></li>
 <li><a href="/rsd/assets/code/src/test_is_prime.py"><code>test_is_prime.py</code></a></li>
-<li><a href="/rsd/assets/code/src/test_repeat_divide.py"><code>test_repeat_divide.py</code></a></li>
-<li><a href="/rsd/assets/code/src/test_find_primes.py"><code>test_find_primes.py</code></a></li>
+<li><a href="/rsd/assets/code/src/test_integer_division.py"><code>test_integer_division.py</code></a></li>
+<li><a href="/rsd/assets/code/src/test_prime_factors.py"><code>test_prime_factors.py</code></a></li>
 </ul>
-<p>These files include code to ensure that our code does what it is expected to do.</p>
-<p>In <code>test_is_prime.py</code> we see using a simple <code>if</code> statement that would check if
-if the code is incorrect but from then on we use a Python statement called
-<code>assert</code> which does this in a simpler way. Most languages have something
-similar.</p>
 <h2>Code convention</h2>
 <p>If you look through the code carefully above you will see that the style is
 consistent across each file:</p>
@@ -168,7 +144,7 @@ e helpful and not constraining.</p>
 <li>Documentation: document your code. Do this by choosing verbose and meaningful
   variable and function names but also by writing a "manual" for each part of
   your code.</li>
-<li>Testing: write a test for your code. This ensures that you know your code does
+<li>Testing: write tests for your code. This ensures that you know your code does
   what it's supposed to do. It will also prove invaluable when it comes to
   debugging as you can immediately find out which part of your code doesn't
   work.</li>
