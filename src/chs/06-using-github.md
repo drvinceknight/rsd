@@ -44,6 +44,19 @@ Exit any previous directories and open your command line and type:
 git clone <copied-address>
 ```
 
+You should see something like this:
+
+```bash
+git clone https://github.com/<github-username>/rsd.git
+Cloning into 'rsd'...
+remote: Counting objects: 222, done.
+remote: Compressing objects: 100% (105/105), done.
+remote: Total 222 (delta 64), reused 107 (delta 32), pack-reused 67
+Receiving objects: 100% (222/222), 202.14 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (84/84), done.
+Checking connectivity... done.
+```
+
 This creates a copy of all the source files for the course. You're welcome to
 look around and see the source files. Note that you can also type `git log` to
 see the entire history of how the course was written.
