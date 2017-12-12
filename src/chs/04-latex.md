@@ -24,7 +24,7 @@ command:
 pdflatex main.tex
 ```
 
-This will create a pdf file `main.pdf`.
+This will create a pdf file `main.pdf` (and a number of auxiliary files).
 
 ## Calling one document from another
 
@@ -104,13 +104,13 @@ Let us investigate the number of prime factors of integers.
 Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
 factors for each integer less than 100.
 
-\begin{center}
-    \begin{figure}[!hbtp]
+\begin{figure}[!hbtp]
+    \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
         \label{scatter_plot_of_prime_factors}
-    \end{figure}
-\end{center}
+    \end{center}
+\end{figure}
 ```
 
 **Note** when we do this we need to include `\include{graphicx}` in the preamble
@@ -143,13 +143,13 @@ Let us investigate the number of prime factors of integers.
 Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
 factors for each integer less than 100.
 
-\begin{center}
-    \begin{figure}[!hbtp]
+\begin{figure}[!hbtp]
+    \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
         \label{scatter_plot_of_prime_factors}
-    \end{figure}
-\end{center}
+    \end{center}
+\end{figure}
 
 The number with the most prime factors
 has\input{tex/largest_number_of_factors} prime factors.
@@ -161,7 +161,7 @@ At times, a computer algebra system might be used to manipulate an expression,
 in this case it could be worth outputting the output directly to file and
 reading it in. (Again, avoiding the opportunity for human error).
 
-Let us write a python script to generate the series expansion for the first 3
+Let us write a python script to generate the series expansion for the first few
 terms of the lower bound of the number of primes less than $n$:
 
 $$
@@ -184,13 +184,13 @@ Let us investigate the number of prime factors of integers.
 Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
 factors for each integer less than 100.
 
-\begin{center}
-    \begin{figure}[!hbtp]
+\begin{figure}[!hbtp]
+    \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
         \label{scatter_plot_of_prime_factors}
-    \end{figure}
-\end{center}
+    \end{center}
+\end{figure}
 
 The number with the most prime factors
 has \input{tex/largest_number_of_factors}prime factors.
@@ -228,22 +228,22 @@ Let us investigate the number of prime factors of integers.
 Figure~\ref{fig:scatter_plot_of_prime_factors} shows the number of prime
 factors for each integer less than 100.
 
-\begin{center}
-    \begin{figure}[!hbtp]
+\begin{figure}[!hbtp]
+    \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
         \label{scatter_plot_of_prime_factors}
-    \end{figure}
-\end{center}
+    \end{center}
+\end{figure}
 
 Table~\ref{tab:number_of_factors_table} shows these counts for \(95\leq
 n\leq 100\).
 
-\begin{center}
-    \begin{table}[!hbtp]
+\begin{table}[!hbtp]
+    \begin{center}
         \input{tex/number_of_factors_table.tex}
-    \end{table}
-\end{center}
+    \end{center}
+\end{table}
 
 The number with the most prime factors
 has\input{tex/largest_number_of_factors} prime factors.
@@ -266,13 +266,12 @@ The particular choice of directory structure suggested here is in not a hard
 rule but it allows for a consistent approach that you can use on a number of
 projects.
 
-## Tip
+# Tip
 
-Try to line break your LaTeX source code: a paragraph in the rendered pdf
-corresponds to a text separated by a blank line in the source. The reason for
-this will become clear in the next chapter.
+As for Python both Atom and VS Code offer many plugins for LaTeX. Explore what
+is available for LaTeX.
 
-## Exercise
+# Exercise
 
 1. Use the following code that counts how many numbers all equally have the most
    factors:
