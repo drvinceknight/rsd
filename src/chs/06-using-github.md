@@ -48,7 +48,7 @@ This creates a copy of all the source files for the course. You're welcome to
 look around and see the source files. Note that you can also type `git log` to
 see the entire history of how the course was written.
 
-## Creating a pull request
+## Making changes
 
 If you go to [participants list]({{root}}/participants/) you can see a list of
 everyone who has participated in this course. You are now going to add yourself
@@ -95,7 +95,7 @@ changes in.
 So you now need to "request" that that merge happens. Github offers the
 capability to do this using what is called a "Pull request" (PR)
 
-## Making a PR
+## Making a Pull Request
 
 First we need to send the changes from your computer back to your remote copy.
 
