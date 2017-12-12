@@ -266,13 +266,12 @@ The particular choice of directory structure suggested here is in not a hard
 rule but it allows for a consistent approach that you can use on a number of
 projects.
 
-## Tip
+# Tip
 
-Try to line break your LaTeX source code: a paragraph in the rendered pdf
-corresponds to a text separated by a blank line in the source. The reason for
-this will become clear in the next chapter.
+As for Python both Atom and VS Code offer many plugins for LaTeX. Explore what
+is available for LaTeX.
 
-## Exercise
+# Exercise
 
 1. Use the following code that counts how many numbers all equally have the most
    factors:
