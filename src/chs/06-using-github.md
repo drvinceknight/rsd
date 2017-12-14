@@ -191,3 +191,8 @@ will in the last part of this workshop) keep the following principles in mind:
 
 **It is important to remember that if done well, a review of a PR should be a
 conversation.**
+
+# Tip
+
+When putting code online if you would like to tell people that they can use it
+take a look at [licences](../../extras/licences/).
