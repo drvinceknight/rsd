@@ -43,11 +43,15 @@ git config --global core.editor "C:\Program Files (x86)\atom.exe --wait"
 To use VS code:
 
 ```bash
-git config --global core.editor "'C:\Program Files (x86)\Microsoft VS Code\code.exe' --wait"
+git config --global core.editor "'C:\Program Files (x86)\Microsoft VS Code\code.exe' -n --wait"
 ```
 
-Note the path might be a bit different (depending on where atom/vs code was installed on
+**Note** the path might be a bit different (depending on where atom/vs code was installed on
 your machine).
+
+**Note** sometimes on Windows setting up one of the above (Atom or VS Code) can
+prove problematic. Do not worry, there are alternatives that work fine for the
+purpose of `git`.
 
 **nix**
 
