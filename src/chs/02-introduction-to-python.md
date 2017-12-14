@@ -95,6 +95,12 @@ Python has an indexable structure called lists:
 
 ```
 
+To close the python interpreter type:
+
+```
+exit()
+```
+
 ## Using Python scripts
 
 To start to write more sophisticated code (software) we can write code
