@@ -89,16 +89,80 @@ div.output_prompt {
     <div class="wrap">
       <div class="home">
         
-    <h1>Extras</h1>
-      <ol start=0>
-          
-              <li><a href=/rsd/extras/editors/>Editors</a></li>
-          
-              <li><a href=/rsd/extras/markdown/>Markdown</a></li>
-          
-              <li><a href=/rsd/extras/software/>Software</a></li>
-          
-      </ol>
+    <h1>Markdown</h1>
+<p>Markdown is a:</p>
+<blockquote>
+<p>Markdown is a lightweight markup language with plain text formatting syntax. </p>
+</blockquote>
+<p>Markdown is a simple set of conventions for how to write text in plain text.
+It is designed to ensure that it can be straightforwardly converted to html and
+also easy to read in plain text.</p>
+<p>A lot of descriptive files in software are written in markdown. For example most
+repositories have a <code>README.md</code> which explains what the repository is for.
+Github automatically renders these.</p>
+<p>There are a number of great guides for markdown:</p>
+<ul>
+<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</a></li>
+<li><a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/">help.github.com/articles/basic-writing-and-formatting-syntax/</a></li>
+<li><a href="https://daringfireball.net/projects/markdown/syntax">daringfireball.net/projects/markdown/syntax</a></li>
+</ul>
+<p>Here is some basic syntax:</p>
+<h2>Headers and titles</h2>
+<p>Use <code>#</code> to denote headers of various levels:</p>
+<pre><code class="markdown">
+# This is the title
+
+## This is a section at the next level
+
+### This is a section at the next next level
+
+</code></pre>
+
+<h2>Text formatting</h2>
+<p>You can create bold and italicized text:</p>
+<pre><code class="markdown">Here is some text, this word is **bold** and this word is *italicized*.
+</code></pre>
+
+<h2>Lists</h2>
+<p>To create an enumerated list:</p>
+<pre><code class="markdown">1. Here is a list
+2. The order does matter
+3. So I use numbers
+</code></pre>
+
+<p>To create an itemized list:</p>
+<pre><code class="markdown">- Here is a list
+- The order does not matter
+- So I just use dashes
+</code></pre>
+
+<h2>Hyperlinks</h2>
+<p>Here is how to create a hyperlink:</p>
+<pre><code class="markdown">Here is the [course site for the rsd workshop](https://vknight.org/rsd/).
+</code></pre>
+
+<h2>Including code</h2>
+<p>You can include inline code:</p>
+<pre><code>Here is how to print hello world in python `print(&quot;hello world&quot;)`.
+</code></pre>
+
+<p>You can also include a big block of displayed code, by writing an indented
+block:</p>
+<pre><code>This is how to print hello world in python:
+
+    print(&quot;hello world&quot;)
+</code></pre>
+
+<h2>Rendering markdown</h2>
+<p>To view your markdown as html:</p>
+<ul>
+<li>View your markdown file on github (it automatically renders markdown).</li>
+<li>Use code to render markdown (for example python has a library that will read
+  markdown and write html).</li>
+<li>Use your editors: many editors have plugins to view rendered markdown.</li>
+<li>Don't :) Markdown is designed to be consistent and easy to read so for some
+  things you might not need to render it at all.</li>
+</ul>
 
       </div>
   </div>
