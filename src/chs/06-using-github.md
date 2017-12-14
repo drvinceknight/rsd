@@ -195,4 +195,4 @@ conversation.**
 # Tip
 
 When putting code online if you would like to tell people that they can use it
-take a look at [licences](../../extras/licences/).
+take a look at [licences]({{root}}/extras/licences/).
