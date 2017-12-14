@@ -120,11 +120,14 @@ clear very soon). Let us set up <code>git</code> to use your editor of choice.</
 </code></pre>
 
 <p>To use VS code:</p>
-<pre><code class="bash">git config --global core.editor &quot;'C:\Program Files (x86)\Microsoft VS Code\code.exe' --wait&quot;
+<pre><code class="bash">git config --global core.editor &quot;'C:\Program Files (x86)\Microsoft VS Code\code.exe' -n --wait&quot;
 </code></pre>
 
-<p>Note the path might be a bit different (depending on where atom/vs code was installed on
+<p><strong>Note</strong> the path might be a bit different (depending on where atom/vs code was installed on
 your machine).</p>
+<p><strong>Note</strong> sometimes on Windows setting up one of the above (Atom or VS Code) can
+prove problematic. Do not worry, there are alternatives that work fine for the
+purpose of <code>git</code>.</p>
 <p><strong>nix</strong></p>
 <p>To use Atom:</p>
 <pre><code class="bash">git config --global core.editor &quot;atom --wait&quot;
