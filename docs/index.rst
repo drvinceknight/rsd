@@ -25,6 +25,11 @@ The workshop is carried out over 2 days with the following structure:
    :maxdepth: 2
    :caption: Contents:
 
+   chapters/index.rst
+   communication/workshop-invitation-email.rst
+   communication/pre-workshop-email.rst
+   communication/post-workshop-email.rst
+
 
 
 Indices and tables
