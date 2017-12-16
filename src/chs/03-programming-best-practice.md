@@ -71,7 +71,7 @@ These 3 things are all as important as each and good software requires all
 three. You might well have more fun working on a particular aspect of it but do
 not prioritise any one area over another.
 
-## Tip
+# Tip
 
 One approach to writing good code is to start by writing the test and then work
 backwards by writing the function to make the test pass:

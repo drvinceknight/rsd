@@ -273,7 +273,7 @@ projects.
 As for Python both Atom and VS Code offer many plugins for LaTeX. Explore what
 is available for LaTeX.
 
-# Exercise
+# Optional
 
 1. Use the following code that counts how many numbers all equally have the most
    factors:
