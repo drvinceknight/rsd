@@ -201,7 +201,7 @@ This is not just the case for these editors and Python. Most good editors have a
 full ecosystem of tools available to support the writing of code in many
 languages.
 
-# Exercise
+# Optional
 
 Write some code to compute and compare both sides of the following equation, for
 varying values of $N$.
