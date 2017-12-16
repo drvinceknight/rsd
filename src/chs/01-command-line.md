@@ -12,7 +12,7 @@ Another approach is to use the command line. This is a small window in to which
 we type commands and lets us give precise (reproducible) commands to the
 computer.
 
-## Step 1: Identify and open your command line interface.
+## Identify and open your command line interface.
 
 First, it is important to note that this will now differ (but not substantially)
 depending on whether or not you're on a Windows machine:
@@ -23,7 +23,7 @@ depending on whether or not you're on a Windows machine:
   system **terminal**.
 
 
-## Step 2: Finding your current location
+## Finding your current location
 
 Let us first find out which directory (folder) we are currently in:
 
@@ -49,7 +49,7 @@ This stands for "present working directory"
 It should list where you are currently located in your
 command line interface.
 
-## Step 3: Seeing what is in your current location
+## Seeing what is in your current location
 
 To view the contents of the current directory:
 
@@ -77,7 +77,7 @@ directory.
 
 Open your current directory in a graphical user interface and compare.
 
-## Step 4: Creating a directory
+## Creating a directory
 
 To create a directory:
 
@@ -108,7 +108,7 @@ It will now look something like:
      |--- rsd-workshop
 ```
 
-## Step 5: Moving to another location
+## Moving to another location
 
 On both Windows and nix if you want to enter a directory that is in your current
 diractory type:
@@ -146,7 +146,7 @@ Where `..` is short hand for a previous directory.
 Experiment with these, in combination with the command to find your current
 location as well as the command to list the contents of your directory.
 
-## Step 6: Copying files
+## Copying files
 
 To copy a file:
 
@@ -162,7 +162,7 @@ copy <file> <new_file_directory_and_name>
 cp <file> <new_file_directory_and_name>
 ```
 
-## Step 7: Moving/renaming files
+## Moving/renaming files
 
 To move a file:
 
@@ -184,7 +184,7 @@ in the same directory.
 **WARNING** When using the command line interface you will not be prompted for
 confirmation if `move`/`mv` were to overwrite another file. Be careful.
 
-## Step 8: Deleting files
+## Deleting files
 
 To delete a file:
 
@@ -198,6 +198,36 @@ del <file>
 
 ```bash
 rm <file>
+```
+
+## Copying and removing directories
+
+To copy a directory:
+
+**Windows**
+
+```
+xcopy <dir> <target>
+```
+
+**nix**
+
+```
+cp -r <dir> <target>
+```
+
+To remove a directory:
+
+**Windows**
+
+```
+rmdir <dir>
+```
+
+**nix**
+
+```
+rm -r <dir>
 ```
 
 # Tip: Tab completion
