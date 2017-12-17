@@ -37,6 +37,18 @@ Plan
    failing.
 10. Discuss summary and triangle of docs/tests/modules.
 
+Optional
+--------
+
+Solution files to optional question:
+
+- :download:`partition.py <../_static/03-programming-best-practice/partition.py>`
+- :download:`test_partition.py <../_static/03-programming-best-practice/test_partition.py>`
+- :download:`integration.py
+  <../_static/03-programming-best-practice/integration.py>`
+- :download:`test_integration.py
+  <../_static/03-programming-best-practice/test_integration.py>`
+
 FAQ
 ---
 
