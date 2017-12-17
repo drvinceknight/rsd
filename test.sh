@@ -1,1 +1,1 @@
-pytest --doctest-glob="*.md"
+pytest -v --doctest-glob="*.md" --ignore=docs/_build/

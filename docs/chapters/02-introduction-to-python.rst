@@ -16,5 +16,13 @@ Plan
    Code), open the command line and put both windows next to each other.
 3. Demonstrate running code.
 
+Optional
+--------
+
+Solution files to optional question:
+
+- :download:`verify_sum_of_integers_formula.py
+  <../_static/02-introduction-to-python/verify_sum_of_integers_formula.py>`
+
 FAQ
 ---
