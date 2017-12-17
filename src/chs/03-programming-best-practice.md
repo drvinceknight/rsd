@@ -78,3 +78,16 @@ backwards by writing the function to make the test pass:
 
 1. This ensures your test fails (and isn't passing coincidentally).
 2. This often helps conceptualise what you want your function to do.
+
+# Optional
+
+Using the discussed principles implement a function to carry out Riemann
+integration over a closed interval $[a, b]$ for any given ordered partitioning
+of $[a, b]$:
+
+$$
+\int_{a}^{b}f(x)dx \approx \sum_{k=1}^{n}f(t_k)(x_k - x_{k - 1})
+$$
+
+where $t_k$ is some point representative of the $k$th partition of $[a, b]$
+given by points $x_k, x_{k-1}$.
