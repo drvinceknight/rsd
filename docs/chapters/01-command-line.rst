@@ -28,3 +28,7 @@ FAQ
 ---
 
 1. Why does your terminal look different to mine?
+2. What does `/s` stand for in `rmdir /s`? **Answer** It stands for "sub
+   directories".
+3. What does `-r` stand for in `rm -r` and `cp -r`? **Answer** It stands for
+   "recursive".

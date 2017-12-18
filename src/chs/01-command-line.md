@@ -221,7 +221,7 @@ To remove a directory:
 **Windows**
 
 ```
-rmdir <dir>
+rmdir /s <dir>
 ```
 
 **nix**
