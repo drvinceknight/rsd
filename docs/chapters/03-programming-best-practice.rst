@@ -58,3 +58,10 @@ FAQ
   **Answer:** I have a personal preference as to what I enjoy doing but it's
   like going on a road trip: you don't go if you have to choose which 3/4 tires
   you take.
+- **Question:** What is the difference between a python docstring :code:`"""`
+  and a comments :code:`#`?
+  **Answer:** There is a technical reason for how they differ under the hood
+  (and there might be similar differentiations in other types of languages) but
+  the main difference is the audience: a docstring is meant to be read by the
+  user of the code and a comment is meant to be read by someone reading your
+  code.
