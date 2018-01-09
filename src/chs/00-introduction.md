@@ -3,6 +3,9 @@
 Welcome to the notes for the 2 day workshop on research software development
 aimed at PhD students at Cardiff University's School of Mathematics.
 
+Motivation for this course is described at this page:
+[Motivation]({{root}}/extras/motivation/).
+
 In this course we will cover:
 
 - Basic use of the command line (an efficient way of talking to your computer);
