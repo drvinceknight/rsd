@@ -142,7 +142,7 @@ The following suggested structure is one of many possible ways of doing things.<
 <p>Let us move all the previously written python files to the <code>src</code> (source)
 directory.</p>
 <p>Thus, our directory should look like this:</p>
-<pre><code>|--- rsd
+<pre><code>|--- rsd-workshop
      main.tex
      main.pdf
      main.*
@@ -182,7 +182,7 @@ factors for each integer less than 100.
 \end{figure}
 </code></pre>
 
-<p><strong>Note</strong> when we do this we need to include <code>\include{graphicx}</code> in the preamble
+<p><strong>Note</strong> when we do this we need to include <code>\usepackage{graphicx}</code> in the preamble
 of <code>main.tex</code>.</p>
 <h2>Including research output in LaTeX</h2>
 <p>If you have research output created from software:</p>
@@ -214,7 +214,7 @@ factors for each integer less than 100.
 \end{figure}
 
 The number with the most prime factors
-has\input{tex/largest_number_of_factors} prime factors.
+has~\input{tex/largest_number_of_factors} prime factors.
 </code></pre>
 
 <h3>Including complex equations</h3>
@@ -243,12 +243,12 @@ factors for each integer less than 100.
     \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
-        \label{scatter_plot_of_prime_factors}
+        \label{fig:scatter_plot_of_prime_factors}
     \end{center}
 \end{figure}
 
 The number with the most prime factors
-has \input{tex/largest_number_of_factors}prime factors.
+has~\input{tex/largest_number_of_factors}prime factors.
 
 The number of factors is probably related to the number of primes which has
 a lower bound given by:
@@ -281,7 +281,7 @@ factors for each integer less than 100.
     \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
-        \label{scatter_plot_of_prime_factors}
+        \label{fig:scatter_plot_of_prime_factors}
     \end{center}
 \end{figure}
 
@@ -292,12 +292,12 @@ n\leq 100\).
     \begin{center}
         \input{tex/number_of_factors_table.tex}
         \caption{The number of prime factors for some numbers.}
-        \label{fig:number_of_factors_table}
+        \label{tab:number_of_factors_table}
     \end{center}
 \end{table}
 
 The number with the most prime factors
-has\input{tex/largest_number_of_factors} prime factors.
+has~\input{tex/largest_number_of_factors} prime factors.
 
 The number of factors is probably related to the number of primes which has
 a lower bound given by:
@@ -307,7 +307,7 @@ a lower bound given by:
 \]
 </code></pre>
 
-<p><strong>Note</strong> when we do this we need to include <code>\include{booktabs}</code> in the preamble
+<p><strong>Note</strong> when we do this we need to include <code>\usepackage{booktabs}</code> in the preamble
 of <code>main.tex</code>.</p>
 <h2>Summary</h2>
 <p>A lot of the principles to writing good software apply to writing good LaTeX.
