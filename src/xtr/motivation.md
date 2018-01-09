@@ -29,7 +29,11 @@ these issues:
   Scientific Contributions"](https://arxiv.org/abs/1708.08205)
 - ["Gene name errors are widespread in the scientific literature."](https://www.ncbi.nlm.nih.gov/pubmed/27552985)
 - ["A Guide to Reproducible Code in Ecology and Evolution"](http://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf)
+
+Here are two organisations with further sources and information:
+
 - [The Sustainable Software Institute](https://www.software.ac.uk)
+- [Software carpentry](https://software-carpentry.org)
 
 (NB if you were to write a paper about some research software you have written
 these would make good references.)
