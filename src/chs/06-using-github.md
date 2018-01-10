@@ -5,8 +5,6 @@ project alone it becomes very powerful when working in collaboration with
 others. In particular the notion of working on parallel branches extends to
 different individuals working on parallel branches.
 
-**TODO Include an image here?**
-
 To do this, we genuinely use a `remote` version of the repository. This can be
 anywhere, even a copy of the repository in another folder on your computer.
 One of the most popular remote services is called `github`.
@@ -81,9 +79,7 @@ one of them:
 cp vince.md <my-name>.md
 ```
 
-Open that file with your editor and modify it to describe yourself. For more
-information about markdown see **TODO:
-https://github.com/drvinceknight/rsd/issues/29**.
+Open that file with your editor and modify it to describe yourself.
 
 Once that is done, let us commit that change:
 
