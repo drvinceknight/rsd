@@ -30,8 +30,7 @@ Plan
    most languages. (For example, if you don't have functionality to write the
    LaTeX code for a table directly you can just use the programming language to
    write the LaTeX using for loops etc...)
-6. Summarise. Through discussion aim to draw the following on the board: :download:`best_practice_triangle.pdf <../_static/04-latex/best_practice_triangle.pdf>`.
-7. Discuss how can use editors and plugins etc...
+6. Discuss how can use editors and plugins etc...
 
 FAQ
 ---

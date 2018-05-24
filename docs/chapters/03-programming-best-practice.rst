@@ -35,7 +35,9 @@ Plan
 9. Show tests and show how to run. Discuss `assert` and how this exists in other
    languages (but that it's not necessary). Demonstrate, breaking code and tests
    failing.
-10. Discuss summary and triangle of docs/tests/modules.
+10. Discuss summary and triangle of docs/tests/modules :download:`best_practice_triangle.pdf <../_static/03-programming-best-practice/best_practice_triangle.pdf>`.
+11. Show this tweet about documentation:
+    https://twitter.com/glaebhoerl/status/980158594338435072
 
 Optional
 --------
