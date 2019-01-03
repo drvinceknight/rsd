@@ -117,31 +117,9 @@ particularly important in collaborative work).</p>
 
 <p><strong>Note</strong> this is not data that is being collected by any cloud service or
 similar. It just stays with your project.</p>
-<p>At various times, <code>git</code> might want to open a text editor (this will be come
-clear very soon). Let us set up <code>git</code> to use your editor of choice.</p>
 <p><strong>Windows</strong></p>
-<p>To use Atom:</p>
-<pre><code class="bash">git config --global core.editor &quot;C:\Program Files (x86)\atom.exe --wait&quot;
-</code></pre>
-
-<p>To use VS code:</p>
-<pre><code class="bash">git config --global core.editor &quot;'C:\Program Files (x86)\Microsoft VS Code\code.exe' -n --wait&quot;
-</code></pre>
-
-<p><strong>Note</strong> the path might be a bit different (depending on where atom/vs code was installed on
-your machine).</p>
-<p><strong>Note</strong> sometimes on Windows setting up one of the above (Atom or VS Code) can
-prove problematic. Do not worry, there are alternatives that work fine for the
-purpose of <code>git</code>.</p>
-<p><strong>nix</strong></p>
-<p>To use Atom:</p>
-<pre><code class="bash">git config --global core.editor &quot;atom --wait&quot;
-</code></pre>
-
-<p>To use VS code:</p>
-<pre><code class="bash">git config --global core.editor &quot;code --wait&quot;
-</code></pre>
-
+<p>Note that all these commands work on the anaconda prompt but if you want to use
+tab completion you can use the <code>git bash</code> command line specifically for git.</p>
 <h2>Initialising a git repository</h2>
 <p>Let us start by creating a new directory: <code>rsd-checklist</code>.</p>
 <p>Inside that let us create a <code>main.tex</code> document which we will use to create a
@@ -202,9 +180,24 @@ be "committed".</p>
 <pre><code class="bash">git commit
 </code></pre>
 
-<p>When doing this, your editor of choice should open up prompting you to write
-what is called a commit message.</p>
-<p>Type the following:</p>
+<p>When doing this, a text editor should open up prompting you to write
+what is called a commit message.
+Your machine will probably have one of the following command
+line editors set up as a default:</p>
+<ul>
+<li><a href="https://www.nano-editor.org/">Nano</a>;</li>
+<li><a href="https://www.vim.org/">Vim</a></li>
+</ul>
+<p>For the purposes of using <code>git</code> these are more than sufficient, all you need to
+know how to do is:</p>
+<ul>
+<li>Write (in Nano: just type, in Vim: press <code>i</code> and type);</li>
+<li>Save (in Nano: <code>Ctrl + O</code>, in Vim: press <code>esc</code>, then <code>:</code>, then <code>w + Enter</code>);</li>
+<li>Quit (in Nano: <code>Ctrl + X</code>, in Vim: press <code>esc</code>, then <code>:</code>, then <code>q + Enter</code>).</li>
+</ul>
+<p><strong>Note</strong> it is possible to set up a different default editor but instructions
+for this can be machine specific.</p>
+<p>We are now ready to type our first commit message:</p>
 <pre><code class="md">Write blank checklist
 
 This file is currently empty but will include the various aspects of sustainable

@@ -29,43 +29,10 @@ git config --global user.email "Your Email"
 **Note** this is not data that is being collected by any cloud service or
 similar. It just stays with your project.
 
-At various times, `git` might want to open a text editor (this will be come
-clear very soon). Let us set up `git` to use your editor of choice.
-
 **Windows**
 
-To use Atom:
-
-```bash
-git config --global core.editor "C:\Program Files (x86)\atom.exe --wait"
-```
-
-To use VS code:
-
-```bash
-git config --global core.editor "'C:\Program Files (x86)\Microsoft VS Code\code.exe' -n --wait"
-```
-
-**Note** the path might be a bit different (depending on where atom/vs code was installed on
-your machine).
-
-**Note** sometimes on Windows setting up one of the above (Atom or VS Code) can
-prove problematic. Do not worry, there are alternatives that work fine for the
-purpose of `git`.
-
-**nix**
-
-To use Atom:
-
-```bash
-git config --global core.editor "atom --wait"
-```
-
-To use VS code:
-
-```bash
-git config --global core.editor "code --wait"
-```
+Note that all these commands work on the anaconda prompt but if you want to use
+tab completion you can use the `git bash` command line specifically for git.
 
 ## Initialising a git repository
 
@@ -146,10 +113,25 @@ be "committed".
 git commit
 ```
 
-When doing this, your editor of choice should open up prompting you to write
+When doing this, a text editor should open up prompting you to write
 what is called a commit message.
+Your machine will probably have one of the following command
+line editors set up as a default:
 
-Type the following:
+- [Nano](https://www.nano-editor.org/);
+- [Vim](https://www.vim.org/)
+
+For the purposes of using `git` these are more than sufficient, all you need to
+know how to do is:
+
+- Write (in Nano: just type, in Vim: press `i` and type);
+- Save (in Nano: `Ctrl + O`, in Vim: press `esc`, then `:`, then `w + Enter`);
+- Quit (in Nano: `Ctrl + X`, in Vim: press `esc`, then `:`, then `q + Enter`).
+
+**Note** it is possible to set up a different default editor but instructions
+for this can be machine specific.
+
+We are now ready to type our first commit message:
 
 ```md
 Write blank checklist
