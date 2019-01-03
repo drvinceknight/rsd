@@ -30,7 +30,11 @@ Plan
    most languages. (For example, if you don't have functionality to write the
    LaTeX code for a table directly you can just use the programming language to
    write the LaTeX using for loops etc...)
-6. Discuss how can use editors and plugins etc...
+6. Discuss how editors can be used for various tasks. In this workshop we have covered two,
+   writing code and LaTeX. Editors come with plugins to help users with their different
+   tasks, for LaTeX the following plugins exist:
+    - VSCode, `LaTeX Workshop <https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop>`_
+    - Atom, `latex <https://atom.io/packages/latex>`_
 
 FAQ
 ---
