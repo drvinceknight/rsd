@@ -162,6 +162,8 @@ copy <file> <new_file_directory_and_name>
 cp <file> <new_file_directory_and_name>
 ```
 
+Experiment with copying *any* file.
+
 ## Moving/renaming files
 
 To move a file:
@@ -177,6 +179,8 @@ move <file> <new_file_directory_and_name>
 ```bash
 mv <file> <new_file_directory_and_name>
 ```
+
+Experiment with moving *any* file.
 
 Note that if you want to rename a file you can do this by passing the new name
 in the same directory.

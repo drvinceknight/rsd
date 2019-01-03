@@ -9,8 +9,7 @@ def get(N):
         - N: integer
 
     Outputs:
-        - a list of prime factors
-        - a list of the exponents of the prime factors
+        - a list of 2-tuples of the prime factor and its exponent
     """
     factors = []
     potential_factor = 1

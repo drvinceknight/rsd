@@ -63,7 +63,11 @@ In general keeping a directory structure clear and well structured is helpful.
 The following suggested structure is one of many possible ways of doing things.
 
 Let us move all the previously written python files to the `src` (source)
-directory.
+directory. Note that we can use the command line to do this:
+
+```bash
+mv *.py src/
+```
 
 Thus, our directory should look like this:
 
@@ -147,7 +151,7 @@ factors for each integer less than 100.
     \begin{center}
         \includegraphics[width=5cm]{src/scatter_plot_of_prime_factors.pdf}
         \caption{The number of prime factors of each integer}
-        \label{scatter_plot_of_prime_factors}
+        \label{fig:scatter_plot_of_prime_factors}
     \end{center}
 \end{figure}
 
