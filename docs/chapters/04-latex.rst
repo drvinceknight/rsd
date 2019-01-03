@@ -16,21 +16,25 @@ Plan
    explain that we're going to not talk about how to write specific things but
    talk about best practice.
 2. Open up editor and create the basic file saved in `rsd-workshop`: compile it.
-3. Describe calling one document from another. Explain why we do this: clearer
+3. Discuss how editors can be used for various tasks. In this workshop we have covered two,
+   writing code and LaTeX. Editors come with plugins to help users with their different
+   tasks, for LaTeX the following plugins exist:
+    - VSCode, `LaTeX Workshop <https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop>`_
+    - Atom, `latex <https://atom.io/packages/latex>`_
+4. Describe calling one document from another. Explain why we do this: clearer
    directory structure and further modularisation. Helps separate: content
    (`tex/`) from instructions (`main.tex`).
-4. Talk about the directory structure: move all python files to `src`.
+5. Talk about the directory structure: move all python files to `src`.
    Create/copy the file to create a scatter plot and show how to run that and
    use output directly in code. **Note** the name of the python: same name for
    pdf graph, same name for label in latex document. This helps ensure users
    won't be left wondering where one thing comes from.
-5. Go through other examples. For all of these, invite participants to download
+6. Go through other examples. For all of these, invite participants to download
    the files: no need to write them. The purpose of this workshop is not to
    teach advanced Python, but emphasise that similar functionality exists in
    most languages. (For example, if you don't have functionality to write the
    LaTeX code for a table directly you can just use the programming language to
    write the LaTeX using for loops etc...)
-6. Discuss how can use editors and plugins etc...
 
 FAQ
 ---
